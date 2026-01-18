@@ -58,6 +58,18 @@ export default function Home() {
           </Link>
         </div>
 
+        <div className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '2px dashed var(--primary)' }}>
+          <div>
+            <h2 style={{ fontSize: '1.8rem', color: '#1e293b' }}>2026 New Words</h2>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+              Focus on the 550+ words newly added to the 2026 Scripps study list.
+            </p>
+          </div>
+          <Link href="/learn">
+            <button style={{ width: '100%', backgroundColor: '#16a34a', color: '#ffffff' }}>Study New Words</button>
+          </Link>
+        </div>
+
         <div className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
             <h2 style={{ fontSize: '1.8rem', color: '#1e293b' }}>Etymology Index</h2>
@@ -67,7 +79,7 @@ export default function Home() {
             </p>
           </div>
           <Link href="/roots">
-            <button style={{ width: '100%', backgroundColor: '#b45309', color: '#ffffff' }}>Explore Roots</button>
+            <button style={{ width: '100%', background: '#ffffff', border: '2px solid var(--primary)', color: 'var(--primary)' }}>Explore Roots</button>
           </Link>
         </div>
 
@@ -81,18 +93,6 @@ export default function Home() {
           </div>
           <Link href="/lessons">
             <button style={{ width: '100%', background: '#ffffff', border: '2px solid var(--primary)', color: 'var(--primary)' }}>Read Lessons</button>
-          </Link>
-        </div>
-
-        <div className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '2px dashed var(--primary)' }}>
-          <div>
-            <h2 style={{ fontSize: '1.8rem', color: '#1e293b' }}>2026 New Words</h2>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-              Focus on the 550+ words newly added to the 2026 Scripps study list.
-            </p>
-          </div>
-          <Link href="/learn">
-            <button style={{ width: '100%', backgroundColor: '#16a34a', color: '#ffffff' }}>Study New Words</button>
           </Link>
         </div>
       </section>
