@@ -22,8 +22,8 @@ export default function WordCard({ word, definition, origin, partOfSpeech, diffi
 
   return (
     <div className="word-card-container" style={{ perspective: '1000px', width: '100%', maxWidth: '500px', height: '400px', margin: '0 auto' }}>
-      <div 
-        className={`word-card ${isFlipped ? 'flipped' : ''}`} 
+      <div
+        className={`word-card ${isFlipped ? 'flipped' : ''}`}
         onClick={() => setIsFlipped(!isFlipped)}
         style={{
           position: 'relative',
@@ -54,8 +54,8 @@ export default function WordCard({ word, definition, origin, partOfSpeech, diffi
           textAlign: 'center'
         }}>
           <span style={{ fontSize: '0.9rem', color: 'var(--primary)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{difficulty}</span>
-          <h2 style={{ fontSize: '3.5rem', marginBottom: '2rem', color: '#fff' }}>{word}</h2>
-          <button onClick={(e) => { e.stopPropagation(); speak(); }} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', border: '1px solid var(--border)', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <h2 style={{ fontSize: '3.5rem', marginBottom: '2rem', color: 'var(--foreground)' }}>{word}</h2>
+          <button onClick={(e) => { e.stopPropagation(); speak(); }} style={{ background: 'var(--secondary)', color: 'var(--foreground)', border: '1px solid var(--border)', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'none' }}>
             🔊
           </button>
         </div>
@@ -71,21 +71,21 @@ export default function WordCard({ word, definition, origin, partOfSpeech, diffi
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: '24px',
-          background: 'rgba(20, 20, 25, 0.95)',
+          background: '#1e293b',
           border: '1px solid var(--primary)',
           transform: 'rotateY(180deg)',
           padding: '2rem',
           textAlign: 'center'
         }}>
           <h3 style={{ fontSize: '1.2rem', color: 'var(--primary)', marginBottom: '1.5rem' }}>Definition</h3>
-          <p style={{ fontSize: '1.25rem', marginBottom: '2rem', lineHeight: '1.5' }}>{definition}</p>
-          <div style={{ display: 'flex', gap: '1rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+          <p style={{ fontSize: '1.25rem', marginBottom: '2rem', lineHeight: '1.5', color: '#f1f5f9' }}>{definition}</p>
+          <div style={{ display: 'flex', gap: '1rem', fontSize: '0.9rem', color: '#94a3b8' }}>
             <span>Origin: {origin}</span>
             <span>Type: {partOfSpeech}</span>
           </div>
         </div>
       </div>
-      
+
       <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
         <button onClick={(e) => { e.stopPropagation(); setIsFlipped(false); onNext(); }} style={{ width: '200px' }}>Next Word</button>
       </div>

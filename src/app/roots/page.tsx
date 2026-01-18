@@ -52,7 +52,7 @@ export default function RootsPage() {
             </nav>
 
             <header style={{ marginBottom: '5rem' }}>
-                <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', background: 'linear-gradient(to right, #fff, var(--text-muted))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Etymology Index</h1>
+                <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', background: 'linear-gradient(to right, #1e293b, #64748b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Etymology Index</h1>
                 <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '600px' }}>
                     Master the building blocks of language. Understanding these roots will help you decode the spelling of thousands of complex words.
                 </p>
@@ -60,20 +60,20 @@ export default function RootsPage() {
 
             <section style={{ marginBottom: '6rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2.5rem' }}>
-                    <h2 style={{ fontSize: '2rem', margin: 0 }}>Greek Roots</h2>
+                    <h2 style={{ fontSize: '2rem', margin: 0, color: '#1e293b' }}>Greek Roots</h2>
                     <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem' }}>
                     {filteredGreek.map(root => (
                         <div key={root.id} className="card" style={{ padding: '2rem' }}>
                             <div style={{ color: 'var(--primary)', fontWeight: 'bold', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '0.5rem', letterSpacing: '0.1em' }}>Greek Origin</div>
-                            <h3 style={{ fontSize: '2rem', color: '#fff', marginBottom: '1rem' }}>{root.root}</h3>
+                            <h3 style={{ fontSize: '2rem', color: '#1e293b', marginBottom: '1rem' }}>{root.root}</h3>
                             <p style={{ fontSize: '1.1rem', color: 'var(--foreground)', marginBottom: '1.5rem', fontWeight: 500 }}>{root.meaning}</p>
                             <div style={{ paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
                                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Examples</div>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                                     {root.examples.map(ex => (
-                                        <span key={ex} style={{ padding: '0.25rem 0.75rem', background: 'rgba(255,255,255,0.05)', borderRadius: '6px', fontSize: '0.9rem' }}>{ex}</span>
+                                        <span key={ex} style={{ padding: '0.25rem 0.75rem', background: 'rgba(22, 163, 74, 0.1)', color: '#1e293b', borderRadius: '6px', fontSize: '0.9rem' }}>{ex}</span>
                                     ))}
                                 </div>
                             </div>
@@ -84,20 +84,20 @@ export default function RootsPage() {
 
             <section>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2.5rem' }}>
-                    <h2 style={{ fontSize: '2rem', margin: 0 }}>Latin Roots</h2>
+                    <h2 style={{ fontSize: '2rem', margin: 0, color: '#1e293b' }}>Latin Roots</h2>
                     <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem' }}>
                     {filteredLatin.map(root => (
                         <div key={root.id} className="card" style={{ padding: '2rem' }}>
                             <div style={{ color: 'var(--accent)', fontWeight: 'bold', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '0.5rem', letterSpacing: '0.1em' }}>Latin Origin</div>
-                            <h3 style={{ fontSize: '2rem', color: '#fff', marginBottom: '1rem' }}>{root.root}</h3>
+                            <h3 style={{ fontSize: '2rem', color: '#1e293b', marginBottom: '1rem' }}>{root.root}</h3>
                             <p style={{ fontSize: '1.1rem', color: 'var(--foreground)', marginBottom: '1.5rem', fontWeight: 500 }}>{root.meaning}</p>
                             <div style={{ paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
                                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Examples</div>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                                     {root.examples.map(ex => (
-                                        <span key={ex} style={{ padding: '0.25rem 0.75rem', background: 'rgba(255,255,255,0.05)', borderRadius: '6px', fontSize: '0.9rem' }}>{ex}</span>
+                                        <span key={ex} style={{ padding: '0.25rem 0.75rem', background: 'rgba(180, 83, 9, 0.1)', color: '#1e293b', borderRadius: '6px', fontSize: '0.9rem' }}>{ex}</span>
                                     ))}
                                 </div>
                             </div>

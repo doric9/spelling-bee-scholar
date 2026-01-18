@@ -5,8 +5,11 @@ import Link from 'next/link';
 import { words, Word, WordDifficulty } from '@/data/words';
 import WordCard from '@/components/WordCard';
 
+type SessionSize = 20 | 50 | 100 | 'All';
+
 export default function LearnPage() {
     const [difficulty, setDifficulty] = useState<WordDifficulty | 'All'>('OneBee');
+    const [sessionSize, setSessionSize] = useState<SessionSize>(20);
     const [studyList, setStudyList] = useState<Word[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -15,18 +18,19 @@ export default function LearnPage() {
             ? [...words]
             : words.filter(w => w.difficulty === difficulty);
 
-        // Shuffle and take 20 for the session
-        const sessionWords = filtered.sort(() => 0.5 - Math.random()).slice(0, 20);
+        // Shuffle and take the selected session size
+        const shuffled = filtered.sort(() => 0.5 - Math.random());
+        const sessionWords = sessionSize === 'All' ? shuffled : shuffled.slice(0, sessionSize);
         setStudyList(sessionWords);
         setCurrentIndex(0);
-    }, [difficulty]);
+    }, [difficulty, sessionSize]);
 
     const handleNextWord = () => {
         if (currentIndex < studyList.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {
             // End of session
-            alert(`Great job! You've mastered another session of ${difficulty} words.`);
+            alert(`Great job! You've mastered ${studyList.length} ${difficulty === 'All' ? '' : difficulty + ' '}words!`);
             // Reshuffle for next session
             const reshuffled = [...studyList].sort(() => 0.5 - Math.random());
             setStudyList(reshuffled);
@@ -57,7 +61,7 @@ export default function LearnPage() {
                 background: 'radial-gradient(circle at 10% 10%, var(--primary-glow) 0%, transparent 40%), radial-gradient(circle at 90% 90%, rgba(202, 138, 0, 0.1) 0%, transparent 40%)'
             }} />
 
-            <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4rem' }}>
+            <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
                 <Link href="/" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <span style={{ fontSize: '1.2rem' }}>←</span> Back to Dashboard
                 </Link>
@@ -71,7 +75,7 @@ export default function LearnPage() {
                                 padding: '0.5rem 1rem',
                                 fontSize: '0.85rem',
                                 background: difficulty === lvl ? 'var(--accent-gradient)' : 'transparent',
-                                color: difficulty === lvl ? '#000' : 'var(--text-muted)',
+                                color: difficulty === lvl ? '#fff' : 'var(--text-muted)',
                                 boxShadow: difficulty === lvl ? '0 4px 10px 0 var(--primary-glow)' : 'none',
                                 borderRadius: '8px'
                             }}
@@ -81,6 +85,33 @@ export default function LearnPage() {
                     ))}
                 </div>
             </nav>
+
+            {/* Session Size Selector */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 500 }}>Session Size:</span>
+                <div style={{ display: 'flex', gap: '0.5rem', background: 'var(--secondary)', padding: '0.3rem', borderRadius: '10px', border: '1px solid var(--border)' }}>
+                    {([20, 50, 100, 'All'] as SessionSize[]).map((size) => (
+                        <button
+                            key={size}
+                            onClick={() => setSessionSize(size)}
+                            style={{
+                                padding: '0.4rem 0.9rem',
+                                fontSize: '0.8rem',
+                                background: sessionSize === size ? 'var(--primary)' : 'transparent',
+                                color: sessionSize === size ? '#fff' : 'var(--text-muted)',
+                                boxShadow: 'none',
+                                borderRadius: '6px',
+                                fontWeight: 600
+                            }}
+                        >
+                            {size === 'All' ? 'All' : size}
+                        </button>
+                    ))}
+                </div>
+                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                    ({studyList.length} words in session)
+                </span>
+            </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 350px', gap: '4rem', alignItems: 'start' }}>
                 <div>
@@ -109,6 +140,10 @@ export default function LearnPage() {
                         <div>
                             <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.25rem' }}>Focus Level</div>
                             <div style={{ fontSize: '1.2rem', fontWeight: 600 }}>{difficulty === 'All' ? 'Mixed Roster' : difficulty.replace('Bee', ' Bee')}</div>
+                        </div>
+                        <div>
+                            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.25rem' }}>Session Size</div>
+                            <div style={{ fontSize: '1.2rem', fontWeight: 600 }}>{sessionSize === 'All' ? 'Full List' : `${sessionSize} Words`}</div>
                         </div>
                         <div>
                             <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.25rem' }}>Words Remaining</div>

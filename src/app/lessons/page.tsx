@@ -22,7 +22,7 @@ export default function LessonsPage() {
             </nav>
 
             <header style={{ marginBottom: '5rem' }}>
-                <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', background: 'linear-gradient(to right, #fff, var(--text-muted))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Scholar Handbook</h1>
+                <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', background: 'linear-gradient(to right, #1e293b, #64748b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Scholar Handbook</h1>
                 <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '600px' }}>
                     Master the nuances of English spelling with these key lessons from the official Words of the Champions study guide.
                 </p>
@@ -41,12 +41,12 @@ export default function LessonsPage() {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 fontWeight: 'bold',
-                                color: '#000',
+                                color: '#fff',
                                 fontSize: '1.2rem'
                             }}>
                                 {index + 1}
                             </div>
-                            <h2 style={{ fontSize: '2rem', color: '#fff', margin: 0 }}>{lesson.title}</h2>
+                            <h2 style={{ fontSize: '2rem', color: '#1e293b', margin: 0 }}>{lesson.title}</h2>
                         </div>
                         <div style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '2.5rem', color: 'var(--foreground)' }}>
                             {lesson.content}
