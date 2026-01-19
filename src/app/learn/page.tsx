@@ -16,16 +16,21 @@ export default function LearnPage() {
     const { user } = useAuth();
     const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
 
-    // Initialize study list with a state initializer to avoid impure calls during render
-    const [studyList, setStudyList] = useState<Word[]>(() => {
-        const filtered = words.filter(w => w.difficulty === 'OneBee');
-        return filtered.sort(() => 0.5 - Math.random()).slice(0, 20);
-    });
+    // Initialize study list with an empty array to prevent hydration mismatch
+    const [studyList, setStudyList] = useState<Word[]>([]);
 
     useEffect(() => {
         let isMounted = true;
 
-        async function loadBookmarks() {
+        async function initialize() {
+            // Perform initial shuffle only on the client
+            const filtered = words.filter(w => w.difficulty === 'OneBee');
+            const shuffled = filtered.sort(() => 0.5 - Math.random()).slice(0, 20);
+
+            if (isMounted) {
+                setStudyList(shuffled);
+            }
+
             if (user) {
                 await ensureUserDoc(user.uid, user.email || '');
                 const fetched = await getUserBookmarks(user.uid);
@@ -35,7 +40,7 @@ export default function LearnPage() {
             }
         }
 
-        loadBookmarks();
+        initialize();
         return () => { isMounted = false; };
     }, [user]);
 
@@ -79,7 +84,14 @@ export default function LearnPage() {
     const handleNextWord = async () => {
         // Mark as mastered when the user moves to the next word
         if (user) {
-            await updateWordProgress(user.uid, studyList[currentIndex].id, 'mastered');
+            try {
+                // We don't necessarily need to await this if we want immediate UI response, 
+                // but we should catch errors to avoid blocking.
+                updateWordProgress(user.uid, studyList[currentIndex].id, 'mastered')
+                    .catch(err => console.error("Failed to update progress:", err));
+            } catch (error) {
+                console.error("Progress update error:", error);
+            }
         }
 
         if (currentIndex < studyList.length - 1) {

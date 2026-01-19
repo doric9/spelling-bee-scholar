@@ -36,8 +36,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const provider = new GoogleAuthProvider();
         try {
             await signInWithPopup(auth, provider);
-        } catch (error) {
-            console.error("Login failed:", error);
+        } catch (error: unknown) {
+            const authError = error as { code: string; message: string };
+            console.error("Login failed. Details:", authError.code, authError.message);
+            if (authError.code === 'auth/configuration-not-found') {
+                alert("Firebase Auth Error: Please enable 'Google' as a sign-in provider in your Firebase Console (Authentication > Sign-in method).");
+            } else if (authError.code === 'auth/unauthorized-domain') {
+                alert("Firebase Auth Error: This domain is not authorized. If you're on a custom domain, add it to 'Authorized domains' in Firebase Console.");
+            } else {
+                alert(`Login failed: ${authError.message}`);
+            }
         }
     };
 

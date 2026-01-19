@@ -35,13 +35,30 @@ export default function Home() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Hello, {user.displayName}</span>
               {user.photoURL && (
-                <Image
-                  src={user.photoURL}
-                  alt="Profile"
-                  width={32}
-                  height={32}
-                  style={{ borderRadius: '50%', border: '1px solid var(--border)' }}
-                />
+                <div style={{ position: 'relative', width: '32px', height: '32px', borderRadius: '50%', overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--secondary)' }}>
+                  <Image
+                    src={user.photoURL}
+                    alt="Profile"
+                    width={32}
+                    height={32}
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.opacity = '0';
+                    }}
+                  />
+                  <div style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '14px',
+                    fontWeight: 'bold',
+                    color: 'var(--primary)',
+                  }}>
+                    {user.displayName?.charAt(0) || 'U'}
+                  </div>
+                </div>
               )}
               <button onClick={logout} style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)' }}>
                 Sign Out

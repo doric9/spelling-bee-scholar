@@ -5,14 +5,36 @@ import Link from 'next/link';
 import { words, Word } from '@/data/words';
 
 export default function MockTestPage() {
-    const [testList] = useState<Word[]>(() => [...words].sort(() => 0.5 - Math.random()).slice(0, 10));
+    const [testList, setTestList] = useState<Word[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [userInput, setUserInput] = useState('');
     const [feedback, setFeedback] = useState<{ type: 'correct' | 'incorrect' | null; message: string }>({ type: null, message: '' });
     const [score, setScore] = useState(0);
     const [showResult, setShowResult] = useState(false);
+    const [isStarted, setIsStarted] = useState(false);
     const [requestedInfo, setRequestedInfo] = useState<{ definition: boolean, origin: boolean, sentence: boolean }>({ definition: false, origin: false, sentence: false });
     const inputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        let isMounted = true;
+
+        async function initialize() {
+            // Initialize words only on client to avoid hydration mismatch
+            const shuffled = [...words].sort(() => 0.5 - Math.random()).slice(0, 10);
+
+            if (isMounted) {
+                setTestList(shuffled);
+            }
+
+            // Warm up speech synthesis
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        }
+
+        initialize();
+        return () => { isMounted = false; };
+    }, []);
 
     const currentWord = testList[currentIndex];
 
@@ -26,11 +48,45 @@ export default function MockTestPage() {
     }, []);
 
     useEffect(() => {
-        if (currentWord && !showResult && feedback.type === null) {
+        if (isStarted && currentWord && !showResult && feedback.type === null) {
             handleSpeak(currentWord.word);
             inputRef.current?.focus();
         }
-    }, [currentIndex, currentWord, showResult, feedback.type, handleSpeak]);
+    }, [isStarted, currentIndex, currentWord, showResult, feedback.type, handleSpeak]);
+
+    if (!isStarted) {
+        return (
+            <main style={{ textAlign: 'center', justifyContent: 'center', height: '100vh' }}>
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    zIndex: -1,
+                    opacity: 0.2,
+                    background: 'radial-gradient(circle at 80% 20%, var(--primary-glow) 0%, transparent 40%), radial-gradient(circle at 20% 80%, rgba(239, 68, 68, 0.05) 0%, transparent 40%)'
+                }} />
+                <div className="card" style={{ maxWidth: '500px', margin: '0 auto', padding: '4rem' }}>
+                    <h1 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Ready to Spell?</h1>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: '3rem' }}>
+                        This mock competition will test 10 random words. Make sure your volume is up!
+                    </p>
+                    <button
+                        onClick={() => setIsStarted(true)}
+                        style={{ width: '100%', fontSize: '1.2rem', padding: '1.2rem' }}
+                    >
+                        Enter the Arena
+                    </button>
+                    <Link href="/">
+                        <button style={{ width: '100%', background: 'transparent', border: 'none', color: 'var(--text-muted)', marginTop: '1rem' }}>
+                            Maybe Later
+                        </button>
+                    </Link>
+                </div>
+            </main>
+        );
+    }
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
