@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { words, Word, WordDifficulty } from '@/data/words';
 import WordCard from '@/components/WordCard';
+import { useAuth } from '@/context/AuthContext';
+import { getUserBookmarks, toggleBookmark, ensureUserDoc, updateWordProgress } from '@/lib/userService';
 
 type SessionSize = 20 | 50 | 100 | 'All';
 
@@ -11,12 +13,46 @@ export default function LearnPage() {
     const [difficulty, setDifficulty] = useState<WordDifficulty | 'All'>('OneBee');
     const [sessionSize, setSessionSize] = useState<SessionSize>(20);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const { user } = useAuth();
+    const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
 
     // Initialize study list with a state initializer to avoid impure calls during render
     const [studyList, setStudyList] = useState<Word[]>(() => {
         const filtered = words.filter(w => w.difficulty === 'OneBee');
         return filtered.sort(() => 0.5 - Math.random()).slice(0, 20);
     });
+
+    useEffect(() => {
+        let isMounted = true;
+
+        async function loadBookmarks() {
+            if (user) {
+                await ensureUserDoc(user.uid, user.email || '');
+                const fetched = await getUserBookmarks(user.uid);
+                if (isMounted) setBookmarks(fetched);
+            } else {
+                if (isMounted) setBookmarks(new Set());
+            }
+        }
+
+        loadBookmarks();
+        return () => { isMounted = false; };
+    }, [user]);
+
+    const handleToggleBookmark = async (wordId: string, wordStr: string) => {
+        if (!user) {
+            alert("Please sign in to bookmark words!");
+            return;
+        }
+
+        const isBookmarked = bookmarks.has(wordId);
+        const newBookmarks = new Set(bookmarks);
+        if (isBookmarked) newBookmarks.delete(wordId);
+        else newBookmarks.add(wordId);
+
+        setBookmarks(newBookmarks);
+        await toggleBookmark(user.uid, wordId, wordStr, isBookmarked);
+    };
 
     const startNewSession = (diff: WordDifficulty | 'All', size: SessionSize) => {
         const filtered = diff === 'All'
@@ -40,7 +76,12 @@ export default function LearnPage() {
         startNewSession(difficulty, size);
     };
 
-    const handleNextWord = () => {
+    const handleNextWord = async () => {
+        // Mark as mastered when the user moves to the next word
+        if (user) {
+            await updateWordProgress(user.uid, studyList[currentIndex].id, 'mastered');
+        }
+
         if (currentIndex < studyList.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {
@@ -143,6 +184,8 @@ export default function LearnPage() {
                         origin={currentWord.origin}
                         partOfSpeech={currentWord.partOfSpeech}
                         difficulty={currentWord.difficulty}
+                        isBookmarked={bookmarks.has(currentWord.id)}
+                        onToggleBookmark={() => handleToggleBookmark(currentWord.id, currentWord.word)}
                         onNext={handleNextWord}
                     />
                 </div>

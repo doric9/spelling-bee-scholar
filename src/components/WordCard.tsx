@@ -7,10 +7,21 @@ interface WordCardProps {
   origin: string;
   partOfSpeech: string;
   difficulty: string;
+  isBookmarked?: boolean;
+  onToggleBookmark?: () => void;
   onNext: () => void;
 }
 
-export default function WordCard({ word, definition, origin, partOfSpeech, difficulty, onNext }: WordCardProps) {
+export default function WordCard({
+  word,
+  definition,
+  origin,
+  partOfSpeech,
+  difficulty,
+  isBookmarked = false,
+  onToggleBookmark,
+  onNext
+}: WordCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const speak = () => {
@@ -54,6 +65,28 @@ export default function WordCard({ word, definition, origin, partOfSpeech, diffi
           textAlign: 'center'
         }}>
           <span style={{ fontSize: '0.9rem', color: 'var(--primary)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{difficulty}</span>
+
+          {onToggleBookmark && (
+            <button
+              onClick={(e) => { e.stopPropagation(); onToggleBookmark(); }}
+              style={{
+                position: 'absolute',
+                top: '1.5rem',
+                right: '1.5rem',
+                background: 'transparent',
+                border: 'none',
+                fontSize: '1.5rem',
+                cursor: 'pointer',
+                color: isBookmarked ? 'var(--primary)' : 'var(--text-muted)',
+                transition: 'transform 0.2s',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            >
+              {isBookmarked ? '★' : '☆'}
+            </button>
+          )}
+
           <h2 style={{ fontSize: '3.5rem', marginBottom: '2rem', color: 'var(--foreground)' }}>{word}</h2>
           <button onClick={(e) => { e.stopPropagation(); speak(); }} style={{ background: 'var(--secondary)', color: 'var(--foreground)', border: '1px solid var(--border)', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'none' }}>
             🔊

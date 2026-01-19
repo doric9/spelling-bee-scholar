@@ -1,6 +1,21 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { useAuth } from '@/context/AuthContext';
+import { getUserStats } from '@/lib/userService';
 
 export default function Home() {
+  const { user, login, logout } = useAuth();
+  const [stats, setStats] = useState({ masteredCount: 0 });
+
+  useEffect(() => {
+    if (user) {
+      getUserStats(user.uid).then(setStats);
+    }
+  }, [user]);
+
   return (
     <main>
       <div className="bg-mesh" style={{
@@ -14,7 +29,30 @@ export default function Home() {
         background: 'radial-gradient(circle at 20% 30%, var(--primary-glow) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(251, 191, 36, 0.15) 0%, transparent 50%)'
       }} />
 
-      <header style={{ textAlign: 'center', marginBottom: '5rem', marginTop: '4rem' }}>
+      <header style={{ textAlign: 'center', marginBottom: '5rem', marginTop: '4rem', padding: '0 2rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '2rem' }}>
+          {user ? (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Hello, {user.displayName}</span>
+              {user.photoURL && (
+                <Image
+                  src={user.photoURL}
+                  alt="Profile"
+                  width={32}
+                  height={32}
+                  style={{ borderRadius: '50%', border: '1px solid var(--border)' }}
+                />
+              )}
+              <button onClick={logout} style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)' }}>
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <button onClick={login} style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem', fontWeight: 600 }}>
+              Sign In with Google
+            </button>
+          )}
+        </div>
         <div style={{ display: 'inline-block', padding: '0.5rem 1rem', background: 'rgba(22, 163, 74, 0.12)', borderRadius: '20px', color: 'var(--primary)', fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '1.5rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
           Official 2026 Guide
         </div>
@@ -32,12 +70,30 @@ export default function Home() {
         gap: '2rem',
         marginTop: '2rem'
       }}>
+        {user && (
+          <div className="card" style={{ display: 'flex', flexDirection: 'column', background: 'var(--glass-bg)', border: '2px solid var(--primary-glow)', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '100px', height: '100px', background: 'var(--primary-glow)', borderRadius: '50%', opacity: 0.1 }} />
+            <h2 style={{ fontSize: '1.8rem', color: 'var(--primary)', marginBottom: '1rem' }}>My Progress</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Words Mastered</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{stats.masteredCount} / 4,007</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Roster Coverage</div>
+                <div style={{ height: '8px', background: 'var(--border)', borderRadius: '4px', marginTop: '0.5rem', overflow: 'hidden' }}>
+                  <div style={{ width: `${(stats.masteredCount / 4007) * 100}%`, height: '100%', background: 'var(--primary)' }} />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
             <h2 style={{ fontSize: '1.8rem', color: '#1e293b' }}>Flashcard Learning</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
               Deep dive into etymology, roots, and definitions using a spaced repetition system.
-              Perfect for building long-term memory.
             </p>
           </div>
           <Link href="/learn">
@@ -49,8 +105,7 @@ export default function Home() {
           <div>
             <h2 style={{ fontSize: '1.8rem', color: '#1e293b' }}>Mock Competition</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-              Simulate the regional bee environment. Listen to the pronouncer, ask for info,
-              and type your spelling under pressure.
+              Simulate the regional bee environment. Listen to the pronouncer and ask for info.
             </p>
           </div>
           <Link href="/mock-test">
@@ -58,15 +113,19 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '2px dashed var(--primary)' }}>
+        <div className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: user ? 'rgba(22, 163, 74, 0.05)' : 'white' }}>
           <div>
-            <h2 style={{ fontSize: '1.8rem', color: '#1e293b' }}>2026 New Words</h2>
+            <h2 style={{ fontSize: '1.8rem', color: '#1e293b' }}>{user ? 'My Focus List' : '2026 New Words'}</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-              Focus on the 550+ words newly added to the 2026 Scripps study list.
+              {user
+                ? "Study your personal bookmarked list of words for targeted practice."
+                : "Focus on the 550+ words newly added to the 2026 Scripps study list."}
             </p>
           </div>
-          <Link href="/learn">
-            <button style={{ width: '100%', backgroundColor: '#16a34a', color: '#ffffff' }}>Study New Words</button>
+          <Link href={user ? "/focus-list" : "/learn"}>
+            <button style={{ width: '100%', backgroundColor: '#16a34a', color: '#ffffff' }}>
+              {user ? 'View Focus List' : 'Study New Words'}
+            </button>
           </Link>
         </div>
 
@@ -74,8 +133,7 @@ export default function Home() {
           <div>
             <h2 style={{ fontSize: '1.8rem', color: '#1e293b' }}>Etymology Index</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-              Master Greek and Latin roots to decode the spelling of thousands of complex words
-              used in later rounds.
+              Master Greek and Latin roots to decode the spelling of complex words.
             </p>
           </div>
           <Link href="/roots">
@@ -87,8 +145,7 @@ export default function Home() {
           <div>
             <h2 style={{ fontSize: '1.8rem', color: '#1e293b' }}>Scholar Handbook</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-              Key tips on the schwa, silent letters, and other hidden patterns of the English
-              language.
+              Key tips on the schwa, silent letters, and other hidden patterns.
             </p>
           </div>
           <Link href="/lessons">
