@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { words, Word, WordDifficulty } from '@/data/words';
 import WordCard from '@/components/WordCard';
@@ -10,20 +10,35 @@ type SessionSize = 20 | 50 | 100 | 'All';
 export default function LearnPage() {
     const [difficulty, setDifficulty] = useState<WordDifficulty | 'All'>('OneBee');
     const [sessionSize, setSessionSize] = useState<SessionSize>(20);
-    const [studyList, setStudyList] = useState<Word[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    useEffect(() => {
-        const filtered = difficulty === 'All'
+    // Initialize study list with a state initializer to avoid impure calls during render
+    const [studyList, setStudyList] = useState<Word[]>(() => {
+        const filtered = words.filter(w => w.difficulty === 'OneBee');
+        return filtered.sort(() => 0.5 - Math.random()).slice(0, 20);
+    });
+
+    const startNewSession = (diff: WordDifficulty | 'All', size: SessionSize) => {
+        const filtered = diff === 'All'
             ? [...words]
-            : words.filter(w => w.difficulty === difficulty);
+            : words.filter(w => w.difficulty === diff);
 
         // Shuffle and take the selected session size
         const shuffled = filtered.sort(() => 0.5 - Math.random());
-        const sessionWords = sessionSize === 'All' ? shuffled : shuffled.slice(0, sessionSize);
+        const sessionWords = size === 'All' ? shuffled : shuffled.slice(0, size);
         setStudyList(sessionWords);
         setCurrentIndex(0);
-    }, [difficulty, sessionSize]);
+    };
+
+    const handleDifficultyChange = (lvl: WordDifficulty | 'All') => {
+        setDifficulty(lvl);
+        startNewSession(lvl, sessionSize);
+    };
+
+    const handleSizeChange = (size: SessionSize) => {
+        setSessionSize(size);
+        startNewSession(difficulty, size);
+    };
 
     const handleNextWord = () => {
         if (currentIndex < studyList.length - 1) {
@@ -32,9 +47,7 @@ export default function LearnPage() {
             // End of session
             alert(`Great job! You've mastered ${studyList.length} ${difficulty === 'All' ? '' : difficulty + ' '}words!`);
             // Reshuffle for next session
-            const reshuffled = [...studyList].sort(() => 0.5 - Math.random());
-            setStudyList(reshuffled);
-            setCurrentIndex(0);
+            startNewSession(difficulty, sessionSize);
         }
     };
 
@@ -70,7 +83,7 @@ export default function LearnPage() {
                     {(['OneBee', 'TwoBee', 'ThreeBee', 'All'] as const).map((lvl) => (
                         <button
                             key={lvl}
-                            onClick={() => setDifficulty(lvl)}
+                            onClick={() => handleDifficultyChange(lvl)}
                             style={{
                                 padding: '0.5rem 1rem',
                                 fontSize: '0.85rem',
@@ -93,7 +106,7 @@ export default function LearnPage() {
                     {([20, 50, 100, 'All'] as SessionSize[]).map((size) => (
                         <button
                             key={size}
-                            onClick={() => setSessionSize(size)}
+                            onClick={() => handleSizeChange(size)}
                             style={{
                                 padding: '0.4rem 0.9rem',
                                 fontSize: '0.8rem',

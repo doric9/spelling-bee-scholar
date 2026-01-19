@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { words, Word } from '@/data/words';
 
 export default function MockTestPage() {
-    const [testList, setTestList] = useState<Word[]>([]);
+    const [testList] = useState<Word[]>(() => [...words].sort(() => 0.5 - Math.random()).slice(0, 10));
     const [currentIndex, setCurrentIndex] = useState(0);
     const [userInput, setUserInput] = useState('');
     const [feedback, setFeedback] = useState<{ type: 'correct' | 'incorrect' | null; message: string }>({ type: null, message: '' });
@@ -14,29 +14,23 @@ export default function MockTestPage() {
     const [requestedInfo, setRequestedInfo] = useState<{ definition: boolean, origin: boolean, sentence: boolean }>({ definition: false, origin: false, sentence: false });
     const inputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-        const shuffled = [...words].sort(() => 0.5 - Math.random()).slice(0, 10);
-        setTestList(shuffled);
-    }, []);
-
     const currentWord = testList[currentIndex];
 
-    useEffect(() => {
-        if (currentWord && !showResult && feedback.type === null) {
-            handleSpeak(currentWord.word);
-            inputRef.current?.focus();
-            setRequestedInfo({ definition: false, origin: false, sentence: false });
-        }
-    }, [currentIndex, currentWord, showResult, feedback.type]);
-
-    const handleSpeak = (text: string) => {
+    const handleSpeak = useCallback((text: string) => {
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.rate = 0.85;
             window.speechSynthesis.speak(utterance);
         }
-    };
+    }, []);
+
+    useEffect(() => {
+        if (currentWord && !showResult && feedback.type === null) {
+            handleSpeak(currentWord.word);
+            inputRef.current?.focus();
+        }
+    }, [currentIndex, currentWord, showResult, feedback.type, handleSpeak]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -54,6 +48,7 @@ export default function MockTestPage() {
         setTimeout(() => {
             setFeedback({ type: null, message: '' });
             setUserInput('');
+            setRequestedInfo({ definition: false, origin: false, sentence: false });
             if (currentIndex < testList.length - 1) {
                 setCurrentIndex(c => c + 1);
             } else {
@@ -217,7 +212,7 @@ export default function MockTestPage() {
                     {requestedInfo.sentence && (
                         <div style={{ background: 'var(--secondary)', padding: '1rem 1.5rem', borderRadius: '12px', marginBottom: '1rem', borderLeft: '4px solid var(--primary)', animation: 'fadeIn 0.3s ease' }}>
                             <strong style={{ color: 'var(--primary)', fontSize: '0.8rem', textTransform: 'uppercase' }}>Sentence</strong>
-                            <p style={{ marginTop: '0.5rem', fontSize: '1rem' }}>"{currentWord.sentence}"</p>
+                            <p style={{ marginTop: '0.5rem', fontSize: '1rem' }}>&quot;{currentWord.sentence}&quot;</p>
                         </div>
                     )}
                 </div>
