@@ -3,4 +3,9 @@ compatibility_date = "2024-01-19"
 pages_build_output_dir = "out"
 
 [vars]
-# Add any non-secret variables here if needed
+NEXT_PUBLIC_FIREBASE_API_KEY = "AIzaSyAcXcDC4FFDDtySyvoS_X6YGusnmp1lAvk"
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN = "spelling-bee-scholar.firebaseapp.com"
+NEXT_PUBLIC_FIREBASE_PROJECT_ID = "spelling-bee-scholar"
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET = "spelling-bee-scholar.firebasestorage.app"
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID = "555026138181"
+NEXT_PUBLIC_FIREBASE_APP_ID = "1:555026138181:web:06bb51c1580c24bf230f2c"
