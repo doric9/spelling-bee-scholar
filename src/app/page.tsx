@@ -5,10 +5,12 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { getUserStats } from '@/lib/userService';
+import { words } from '@/data/words';
 
 export default function Home() {
   const { user, login, logout } = useAuth();
   const [stats, setStats] = useState({ masteredCount: 0 });
+  const totalCount = words.length;
 
   useEffect(() => {
     if (user) {
@@ -94,12 +96,12 @@ export default function Home() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div>
                 <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Words Mastered</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{stats.masteredCount} / 4,007</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{stats.masteredCount} / {totalCount.toLocaleString()}</div>
               </div>
               <div>
                 <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Roster Coverage</div>
                 <div style={{ height: '8px', background: 'var(--border)', borderRadius: '4px', marginTop: '0.5rem', overflow: 'hidden' }}>
-                  <div style={{ width: `${(stats.masteredCount / 4007) * 100}%`, height: '100%', background: 'var(--primary)' }} />
+                  <div style={{ width: `${(stats.masteredCount / totalCount) * 100}%`, height: '100%', background: 'var(--primary)' }} />
                 </div>
               </div>
             </div>
