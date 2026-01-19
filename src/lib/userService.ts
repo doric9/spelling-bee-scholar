@@ -24,6 +24,7 @@ export interface Bookmark {
  * Ensures a user document exists in Firestore.
  */
 export const ensureUserDoc = async (uid: string, email: string) => {
+    if (!db) return;
     const userRef = doc(db, "users", uid);
     const userSnap = await getDoc(userRef);
 
@@ -40,6 +41,7 @@ export const ensureUserDoc = async (uid: string, email: string) => {
  * Toggles a word bookmark for a user.
  */
 export const toggleBookmark = async (uid: string, wordId: string, word: string, isBookmarked: boolean) => {
+    if (!db) return;
     const bookmarkRef = doc(db, "users", uid, "bookmarks", wordId);
 
     if (isBookmarked) {
@@ -57,6 +59,7 @@ export const toggleBookmark = async (uid: string, wordId: string, word: string, 
  * Fetches all bookmarks for a user.
  */
 export const getUserBookmarks = async (uid: string): Promise<Set<string>> => {
+    if (!db) return new Set();
     const bookmarksRef = collection(db, "users", uid, "bookmarks");
     const snap = await getDocs(bookmarksRef);
     const bookmarkIds = new Set<string>();
@@ -68,6 +71,7 @@ export const getUserBookmarks = async (uid: string): Promise<Set<string>> => {
  * Updates learning progress for a word.
  */
 export const updateWordProgress = async (uid: string, wordId: string, status: 'learning' | 'mastered') => {
+    if (!db) return;
     const progressRef = doc(db, "users", uid, "progress", wordId);
     await setDoc(progressRef, {
         status,
@@ -79,6 +83,7 @@ export const updateWordProgress = async (uid: string, wordId: string, status: 'l
  * Fetches user stats (total mastered words).
  */
 export const getUserStats = async (uid: string) => {
+    if (!db) return { masteredCount: 0 };
     const progressRef = collection(db, "users", uid, "progress");
     const snap = await getDocs(progressRef);
     let masteredCount = 0;

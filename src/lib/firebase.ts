@@ -12,8 +12,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+const isConfigured = !!process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
+const app = isConfigured
+    ? (getApps().length > 0 ? getApp() : initializeApp(firebaseConfig))
+    : undefined;
+
+const auth = app ? getAuth(app) : null;
+const db = app ? getFirestore(app) : null;
 
 export { app, auth, db };
