@@ -203,7 +203,7 @@ export const words: Word[] = [
     {
         "word": "adsum",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A Latin word meaning 'I am here' or 'present,' used as a response when one's name is called.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -734,7 +734,7 @@ export const words: Word[] = [
     {
         "word": "azure.  backgammon",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A bright blue color; in heraldry, the color blue.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -1121,7 +1121,7 @@ export const words: Word[] = [
     {
         "word": "bystander.  cabbage",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A person who is present at an event but does not take part.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -2012,7 +2012,7 @@ export const words: Word[] = [
     {
         "word": "cymbals.  daft",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A pair of concave metal discs used as percussion instruments.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -2408,7 +2408,7 @@ export const words: Word[] = [
     {
         "word": "dynamite.  eagerly",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "An explosive made of nitroglycerin mixed with an absorbent material.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -2939,7 +2939,7 @@ export const words: Word[] = [
     {
         "word": "exude.  facade",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "To discharge or emit slowly; to display an emotion or quality strongly.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -3192,7 +3192,7 @@ export const words: Word[] = [
         "word": "floridly",
         "difficulty": "OneBee",
         "definition": "very flowery in style : ornate; also : having a florid style",
-        "origin": "borrowed from Latin flōridus \\",
+        "origin": "borrowed from Latin flōridus \\\\\\\\",
         "partOfSpeech": "adjective",
         "sentence": "",
         "id": "354"
@@ -3354,7 +3354,7 @@ export const words: Word[] = [
         "word": "forgeable",
         "difficulty": "OneBee",
         "definition": "to form (something, such as metal) by heating and hammering",
-        "origin": "Middle English forgen \\",
+        "origin": "Middle English forgen \\\\\\\\",
         "partOfSpeech": "verb",
         "sentence": "",
         "id": "372"
@@ -3488,7 +3488,7 @@ export const words: Word[] = [
     {
         "word": "futility.  gab",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "The quality of being useless or ineffective.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -3839,7 +3839,7 @@ export const words: Word[] = [
     {
         "word": "gruel.  habitual",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A thin liquid food made by boiling oatmeal or other grain in water or milk.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -4190,7 +4190,7 @@ export const words: Word[] = [
     {
         "word": "hydrant.  iceberg",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "An upright pipe with a valve for drawing water from a main.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -4406,7 +4406,7 @@ export const words: Word[] = [
     {
         "word": "isolation.  jammer",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "The state of being separated from others.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -4415,7 +4415,7 @@ export const words: Word[] = [
     {
         "word": "jankers",
         "difficulty": "OneBee",
-        "definition": "confinement, work duty, or drill imposed as punishment on someone in the armed forces \\\\\\\\u2014 used in Britain .",
+        "definition": "confinement, work duty, or drill imposed as punishment on someone in the armed forces \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014 used in Britain .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -4442,7 +4442,7 @@ export const words: Word[] = [
     {
         "word": "joinery.  kazoo",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "The craft of connecting pieces of wood, especially in furniture making.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -4460,7 +4460,7 @@ export const words: Word[] = [
     {
         "word": "kenning",
         "difficulty": "OneBee",
-        "definition": "the first Bee Way back in 1925, the very first National Spelling Bee kicked off\\\\\\\\u2014organized by the Louisville Courier-Journal .",
+        "definition": "the first Bee Way back in 1925, the very first National Spelling Bee kicked off\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014organized by the Louisville Courier-Journal .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -4550,7 +4550,7 @@ export const words: Word[] = [
     {
         "word": "kudos.  labradoodle",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "Praise and honor received for an achievement.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -4784,7 +4784,7 @@ export const words: Word[] = [
     {
         "word": "lyricist.  macaw",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A person who writes the words for songs.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -5351,7 +5351,7 @@ export const words: Word[] = [
     {
         "word": "mythical.  naysayers",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "Relating to or resembling myths; imaginary or fictitious.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -5486,7 +5486,7 @@ export const words: Word[] = [
     {
         "word": "nuggets.  oatmeal",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "Small lumps of gold or other precious metal; also breaded pieces of chicken.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -5549,7 +5549,7 @@ export const words: Word[] = [
     {
         "word": "omega",
         "difficulty": "OneBee",
-        "definition": "The twenty-fourth letter of the Classical and the Modern Greek alphabet, and the twenty-eighth letter of the Old and the Ancient Greek alphabet, i.e. the last letter of every Greek alphabet. Uppercase version: \\\\\\\\u03a9; lowercase: \\\\\\\\u03c9.",
+        "definition": "The twenty-fourth letter of the Classical and the Modern Greek alphabet, and the twenty-eighth letter of the Old and the Ancient Greek alphabet, i.e. the last letter of every Greek alphabet. Uppercase version: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u03a9; lowercase: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u03c9.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -5675,7 +5675,7 @@ export const words: Word[] = [
     {
         "word": "ozone.  packet",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A form of oxygen with three atoms per molecule, found in Earth's upper atmosphere.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -6116,7 +6116,7 @@ export const words: Word[] = [
     {
         "word": "previous",
         "difficulty": "OneBee",
-        "definition": "An existing criminal record (short for \\\\\\\\",
+        "definition": "An existing criminal record (short for \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -6341,7 +6341,7 @@ export const words: Word[] = [
     {
         "word": "pyramid.  quantify",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A monumental structure with triangular sides meeting at an apex.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -6377,7 +6377,7 @@ export const words: Word[] = [
     {
         "word": "quota.  rabid",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A fixed share or proportion allocated to a group or person.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -6791,7 +6791,7 @@ export const words: Word[] = [
     {
         "word": "rugby",
         "difficulty": "OneBee",
-        "definition": "(usually uncountable) A form of football in which players can hold or kick an ovoid ball. The ball cannot be handled forwards and points are scored by touching the ball to the ground in the area past their opponent\\\\\\\\u2019s territory or kicking the ball between goalposts and over a crossbar.",
+        "definition": "(usually uncountable) A form of football in which players can hold or kick an ovoid ball. The ball cannot be handled forwards and points are scored by touching the ball to the ground in the area past their opponent\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s territory or kicking the ball between goalposts and over a crossbar.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -6800,7 +6800,7 @@ export const words: Word[] = [
     {
         "word": "rumor.  sacrifice",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A currently circulating story or report of uncertain truth.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -7529,7 +7529,7 @@ export const words: Word[] = [
     {
         "word": "steampunk",
         "difficulty": "OneBee",
-        "definition": "Guess what? The very first time the National Spelling Bee was broadcast, it wasn\\\\\\\\u2019t on TV\\\\\\\\u2014it was on the radio! Yep, back in the day, people listened to the action instead of watching it .",
+        "definition": "Guess what? The very first time the National Spelling Bee was broadcast, it wasn\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019t on TV\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014it was on the radio! Yep, back in the day, people listened to the action instead of watching it .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -7646,7 +7646,7 @@ export const words: Word[] = [
     {
         "word": "stubble",
         "difficulty": "OneBee",
-        "definition": "Short, coarse hair, especially on a man\\\\\\\\u2019s face.",
+        "definition": "Short, coarse hair, especially on a man\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s face.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -7790,7 +7790,7 @@ export const words: Word[] = [
     {
         "word": "sympathy.  talent",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "Feelings of pity and sorrow for someone else's misfortune.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -8168,7 +8168,7 @@ export const words: Word[] = [
     {
         "word": "tutorial.  unabridged",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A period of instruction given by a tutor; an explanatory guide.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -8186,7 +8186,7 @@ export const words: Word[] = [
     {
         "word": "uncle",
         "difficulty": "OneBee",
-        "definition": "The brother or brother-in-law of one\\\\\\\\u2019s parent.",
+        "definition": "The brother or brother-in-law of one\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s parent.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -8294,7 +8294,7 @@ export const words: Word[] = [
     {
         "word": "usher.  various",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A person who shows people to their seats.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -8465,7 +8465,7 @@ export const words: Word[] = [
     {
         "word": "votive.  waggery",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "Offered or consecrated in fulfillment of a vow.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -8726,7 +8726,7 @@ export const words: Word[] = [
     {
         "word": "wring.  yammer",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "To squeeze and twist to force liquid out.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -8780,7 +8780,7 @@ export const words: Word[] = [
     {
         "word": "yore.  zither",
         "difficulty": "OneBee",
-        "definition": "",
+        "definition": "A long time ago; in times past.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -8843,7 +8843,7 @@ export const words: Word[] = [
     {
         "word": "abrogate",
         "difficulty": "TwoBee",
-        "definition": "To annul by an authoritative act; to abolish by the authority of the maker or her or his successor; to repeal; \\\\\\\\u2014 applied to the repeal of laws, decrees, ordinances, the abolition of customs, etc.",
+        "definition": "To annul by an authoritative act; to abolish by the authority of the maker or her or his successor; to repeal; \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014 applied to the repeal of laws, decrees, ordinances, the abolition of customs, etc.",
         "origin": "",
         "partOfSpeech": "verb",
         "sentence": "",
@@ -9195,7 +9195,7 @@ export const words: Word[] = [
         "word": "aggrandizement",
         "difficulty": "TwoBee",
         "definition": "to make great or greater : increase, enlarge",
-        "origin": "borrowed (with assimilation of the ending to {et_link|-ize|-ize}) from French agrandiss-, stem of agrandir, going back to Old French, from a-, verb-forming prefix (going back to Latin ad- {et_link|ad-|ad-}) + -grandir, verbal derivative of grand \\",
+        "origin": "borrowed (with assimilation of the ending to {et_link|-ize|-ize}) from French agrandiss-, stem of agrandir, going back to Old French, from a-, verb-forming prefix (going back to Latin ad- {et_link|ad-|ad-}) + -grandir, verbal derivative of grand \\\\\\\\",
         "partOfSpeech": "verb",
         "sentence": "",
         "id": "1021"
@@ -9248,7 +9248,7 @@ export const words: Word[] = [
     {
         "word": "aguaji",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A tropical palm tree found in South American wetlands, valued for its edible fruit.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -9289,15 +9289,6 @@ export const words: Word[] = [
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "1031"
-    },
-    {
-        "word": "alembroth",
-        "difficulty": "TwoBee",
-        "definition": "The \"salt of wisdom\" of the alchemists, a double salt composed of the chlorides of ammonium and mercury, formerly used as a stimulant.",
-        "origin": "",
-        "partOfSpeech": "Noun",
-        "sentence": "",
-        "id": "1032"
     },
     {
         "word": "Alexandria",
@@ -9356,7 +9347,7 @@ export const words: Word[] = [
     {
         "word": "allonym",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The name of another person assumed by a writer as a pen name.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -9410,7 +9401,7 @@ export const words: Word[] = [
     {
         "word": "alveoli",
         "difficulty": "TwoBee",
-        "definition": "two bee difficulty level: Words with a single asterisk (*) indicate a primarily British spelling . A double asterisk (**) indicates the spelling that is more widely used . A complete list of the words that were added to this year\\\\\\\\u2019s study list can be found on page 56 .",
+        "definition": "two bee difficulty level: Words with a single asterisk (*) indicate a primarily British spelling . A double asterisk (**) indicates the spelling that is more widely used . A complete list of the words that were added to this year\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s study list can be found on page 56 .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -9500,7 +9491,7 @@ export const words: Word[] = [
     {
         "word": "anaglyphy",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The art or technique of producing raised ornamental work or stereoscopic images.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -9653,7 +9644,7 @@ export const words: Word[] = [
     {
         "word": "ankh",
         "difficulty": "TwoBee",
-        "definition": "A cross shaped like a T with a loop at the top, the Egyptian hieroglyph representing the Egyptian triliteral \\\\\\\\ua725n\\\\\\\\u1e2b and often used as an amulet or charm for this concept.",
+        "definition": "A cross shaped like a T with a loop at the top, the Egyptian hieroglyph representing the Egyptian triliteral \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ua725n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u1e2b and often used as an amulet or charm for this concept.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -9824,7 +9815,7 @@ export const words: Word[] = [
     {
         "word": "apostrophe",
         "difficulty": "TwoBee",
-        "definition": "The text character \\\\\\\\u2019, which serves as a punctuation mark in various languages and as a diacritical mark in certain rare contexts.",
+        "definition": "The text character \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019, which serves as a punctuation mark in various languages and as a diacritical mark in certain rare contexts.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -10031,7 +10022,7 @@ export const words: Word[] = [
     {
         "word": "art brut",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "French term meaning 'raw art,' referring to art created outside the boundaries of official culture, often by self-taught artists.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -10139,7 +10130,7 @@ export const words: Word[] = [
     {
         "word": "assumption",
         "difficulty": "TwoBee",
-        "definition": "archaic or obsolete? not here! Here\\\\\\\\u2019s a secret: the Bee doesn\\\\\\\\u2019t use super old words that nobody really says anymore . That means no obsolete or archaic words show up in the competition\\\\\\\\u2014or even in 2026 Words of the Champions! Why? Because obsolete words stopped being part of regular English way back in 1755\\\\\\\\u2014and archaic words only pop up in special places like poems or prayers .",
+        "definition": "archaic or obsolete? not here! Here\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s a secret: the Bee doesn\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019t use super old words that nobody really says anymore . That means no obsolete or archaic words show up in the competition\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014or even in 2026 Words of the Champions! Why? Because obsolete words stopped being part of regular English way back in 1755\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014and archaic words only pop up in special places like poems or prayers .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -10436,7 +10427,7 @@ export const words: Word[] = [
     {
         "word": "avuncular.  babka",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Relating to an uncle; kind and friendly toward a younger person.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -10499,7 +10490,7 @@ export const words: Word[] = [
     {
         "word": "bandolerismo",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A Spanish term for banditry or highway robbery, especially in rural areas.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -10508,7 +10499,7 @@ export const words: Word[] = [
     {
         "word": "bango",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A type of cannabis or marijuana, particularly as used in parts of Africa and Asia.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -10522,15 +10513,6 @@ export const words: Word[] = [
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "1168"
-    },
-    {
-        "word": "Barnevelder",
-        "difficulty": "TwoBee",
-        "definition": "A domestic chicken of a cross-breed between local Dutch chickens and various \"Shanghai\" birds imported from Asia to Europe in the late 19th century.",
-        "origin": "",
-        "partOfSpeech": "Noun",
-        "sentence": "",
-        "id": "1169"
     },
     {
         "word": "baronetcy",
@@ -10824,7 +10806,7 @@ export const words: Word[] = [
         "word": "birria",
         "difficulty": "TwoBee",
         "definition": "a Mexican dish of stewed meat seasoned especially with chili peppers",
-        "origin": "borrowed from Mexican Spanish, from Spanish, \\",
+        "origin": "borrowed from Mexican Spanish, from Spanish, \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "1202"
@@ -10842,7 +10824,7 @@ export const words: Word[] = [
         "word": "blastema",
         "difficulty": "TwoBee",
         "definition": "a mass of undifferentiated cells capable of growth and differentiation",
-        "origin": "borrowed from Greek blástēma \\",
+        "origin": "borrowed from Greek blástēma \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "1204"
@@ -10868,7 +10850,7 @@ export const words: Word[] = [
     {
         "word": "blintzes",
         "difficulty": "TwoBee",
-        "definition": "the mystery of silent letters! Why do words have sneaky silent letters that don\\\\\\\\u2019t make a sound? Take the word \\\\\\\\u201cdebt\\\\\\\\u201d for example\\\\\\\\u2014it comes from the Latin word debitum, which means \\\\\\\\u201cdebt .\\\\\\\\u201d When French borrowed the word, they dropped the \\\\\\\\u201cb\\\\\\\\u201d to make it simpler . But when English borrowed it back a few hundred years later, we put the \\\\\\\\u201cb\\\\\\\\u201d right back in! Why? Probably to make the word look fancy and classical\\\\\\\\u2014but it definitely makes spelling trickier! Silent letters are like little secrets from the past hiding inside words . Cool, right?",
+        "definition": "the mystery of silent letters! Why do words have sneaky silent letters that don\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019t make a sound? Take the word \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201cdebt\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201d for example\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014it comes from the Latin word debitum, which means \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201cdebt .\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201d When French borrowed the word, they dropped the \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201cb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201d to make it simpler . But when English borrowed it back a few hundred years later, we put the \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201cb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201d right back in! Why? Probably to make the word look fancy and classical\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014but it definitely makes spelling trickier! Silent letters are like little secrets from the past hiding inside words . Cool, right?",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -11246,7 +11228,7 @@ export const words: Word[] = [
     {
         "word": "busby.  cabaret",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A tall fur hat worn by certain military regiments.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -11381,7 +11363,7 @@ export const words: Word[] = [
     {
         "word": "cameist",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "One who makes or engraves cameos.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -11516,7 +11498,7 @@ export const words: Word[] = [
     {
         "word": "caret",
         "difficulty": "TwoBee",
-        "definition": "A mark \\\\\\\\u27e8 \\\\\\\\u2038 \\\\\\\\u27e9 used by writers and proofreaders to indicate that something is to be inserted at that point.",
+        "definition": "A mark \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u27e8 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2038 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u27e9 used by writers and proofreaders to indicate that something is to be inserted at that point.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -11849,7 +11831,7 @@ export const words: Word[] = [
     {
         "word": "cereza",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The Spanish word for cherry.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -11904,7 +11886,7 @@ export const words: Word[] = [
         "word": "Chamorro",
         "difficulty": "TwoBee",
         "definition": "a member of a people of the Mariana Islands",
-        "origin": "borrowed from Spanish chamorro, probably borrowed from Chamorro chamorri \\",
+        "origin": "borrowed from Spanish chamorro, probably borrowed from Chamorro chamorri \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "1322"
@@ -12155,7 +12137,7 @@ export const words: Word[] = [
     {
         "word": "circumflex",
         "difficulty": "TwoBee",
-        "definition": "A diacritical mark (\\\\\\\\u02c6) placed over a vowel in the orthography or transliteration of many languages to change its pronunciation; while in some other languages over a consonant.",
+        "definition": "A diacritical mark (\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u02c6) placed over a vowel in the orthography or transliteration of many languages to change its pronunciation; while in some other languages over a consonant.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -12263,7 +12245,7 @@ export const words: Word[] = [
     {
         "word": "coaxation",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The croaking of frogs.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -12318,7 +12300,7 @@ export const words: Word[] = [
         "word": "cogently",
         "difficulty": "TwoBee",
         "definition": "appealing forcibly to the mind or reason : convincing",
-        "origin": "borrowed from Latin cōgent-, cōgens, present participle of cōgere \\",
+        "origin": "borrowed from Latin cōgent-, cōgens, present participle of cōgere \\\\\\\\",
         "partOfSpeech": "adjective",
         "sentence": "",
         "id": "1368"
@@ -12506,7 +12488,7 @@ export const words: Word[] = [
     {
         "word": "con forza",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A musical direction meaning 'with force' or 'forcefully.'",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -12516,7 +12498,7 @@ export const words: Word[] = [
         "word": "concision",
         "difficulty": "TwoBee",
         "definition": "the quality or state of being concise",
-        "origin": "Middle English concisioun \\",
+        "origin": "Middle English concisioun \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "1390"
@@ -12570,7 +12552,7 @@ export const words: Word[] = [
         "word": "confabulation",
         "difficulty": "TwoBee",
         "definition": "to talk informally : chat",
-        "origin": "borrowed from Latin confābulātus, past participle of confābulārī \\",
+        "origin": "borrowed from Latin confābulātus, past participle of confābulārī \\\\\\\\",
         "partOfSpeech": "verb",
         "sentence": "",
         "id": "1396"
@@ -12641,7 +12623,7 @@ export const words: Word[] = [
     {
         "word": "consequent",
         "difficulty": "TwoBee",
-        "definition": "The second half of a hypothetical proposition; Q, if the form of the proposition is \\\\\\\\",
+        "definition": "The second half of a hypothetical proposition; Q, if the form of the proposition is \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -12821,7 +12803,7 @@ export const words: Word[] = [
     {
         "word": "coriander",
         "difficulty": "TwoBee",
-        "definition": "there\\\\\\\\u2019s a first time for everything Meet Hugh Tosteson, the spelling bee trailblazer! In 1975, he became the first champion from outside the 50 U .S . states .",
+        "definition": "there\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s a first time for everything Meet Hugh Tosteson, the spelling bee trailblazer! In 1975, he became the first champion from outside the 50 U .S . states .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -13145,7 +13127,7 @@ export const words: Word[] = [
     {
         "word": "curie",
         "difficulty": "TwoBee",
-        "definition": "3.7\\\\\\\\u00d71010 decays per second, as a unit of radioactivity. Symbol Ci.",
+        "definition": "3.7\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00d71010 decays per second, as a unit of radioactivity. Symbol Ci.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -13197,9 +13179,9 @@ export const words: Word[] = [
         "id": "1465"
     },
     {
-        "word": "cynicism.  da capo",
+        "word": "cynicism",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "An attitude of scornful or jaded negativity, especially distrust of others' motives.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -13451,7 +13433,7 @@ export const words: Word[] = [
     {
         "word": "deglaciation",
         "difficulty": "TwoBee",
-        "definition": "d\\\\\\\\u00e9j\\\\\\\\u00e0 vu** OR d\\\\\\\\u00e9j\\\\\\\\u00e0 vue",
+        "definition": "d\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e9j\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e0 vu** OR d\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e9j\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e0 vue",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -13595,7 +13577,7 @@ export const words: Word[] = [
     {
         "word": "denominator",
         "difficulty": "TwoBee",
-        "definition": "The number or expression written below the line in a fraction (such as 2 in \\\\\\\\u00bd).",
+        "definition": "The number or expression written below the line in a fraction (such as 2 in \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00bd).",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -14036,7 +14018,7 @@ export const words: Word[] = [
     {
         "word": "dogana",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "An Italian word for a customs house or customs authority.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -14099,7 +14081,7 @@ export const words: Word[] = [
     {
         "word": "dopamine",
         "difficulty": "TwoBee",
-        "definition": "A neurotransmitter associated with movement, attention, learning, and the brain\\\\\\\\u2019s pleasure and reward system.",
+        "definition": "A neurotransmitter associated with movement, attention, learning, and the brain\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s pleasure and reward system.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -14189,7 +14171,7 @@ export const words: Word[] = [
     {
         "word": "drupiferous",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Bearing or producing drupes (stone fruits like cherries or peaches).",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -14259,9 +14241,9 @@ export const words: Word[] = [
         "id": "1583"
     },
     {
-        "word": "dystopia.  ebenaceous",
+        "word": "dystopia",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "An imaginary place where everything is as bad as possible; opposite of utopia.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -14828,7 +14810,7 @@ export const words: Word[] = [
     {
         "word": "Evactor",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "One who empties, removes, or evicts.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -14882,7 +14864,7 @@ export const words: Word[] = [
     {
         "word": "exaugural",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Pertaining to leaving or retiring from office.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -15087,9 +15069,9 @@ export const words: Word[] = [
         "id": "1675"
     },
     {
-        "word": "extrorse.  facetious",
+        "word": "extrorse",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Turned or facing outward, especially of anthers that open away from the center of a flower.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -15179,7 +15161,7 @@ export const words: Word[] = [
     {
         "word": "fang shih",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Chinese magicians or alchemists of ancient times who sought immortality.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -15782,7 +15764,7 @@ export const words: Word[] = [
     {
         "word": "fussbudget.  gaiters",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A person who fusses about trivial matters.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -16025,7 +16007,7 @@ export const words: Word[] = [
     {
         "word": "glissando",
         "difficulty": "TwoBee",
-        "definition": "Either a continuous sliding from one pitch to another (\\\\",
+        "definition": "Either a continuous sliding from one pitch to another (\\\\\\\\\\\\\\\\",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -16151,7 +16133,7 @@ export const words: Word[] = [
     {
         "word": "grandrelle",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A yarn made by twisting two differently colored threads together.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -16169,7 +16151,7 @@ export const words: Word[] = [
     {
         "word": "gravimetry",
         "difficulty": "TwoBee",
-        "definition": "all about the schwa: the sneaky sound! Be like the schwa\\\\\\\\u2014the chillest sound in English\\\\\\\\u2014never stressed! But if you\\\\\\\\u2019re spelling, the schwa can actually stress you out, because it can sound like any vowel: a, e, i, o, u, or y! That\\\\\\\\u2019s why words with a schwa can be tricky to spell . Here\\\\\\\\u2019s a pro tip: ask for the word\\\\\\\\u2019s language of origin . If it\\\\\\\\u2019s from Greek, try guessing an \\\\\\\\u201co\\\\\\\\u201d for that sneaky schwa sound\\\\\\\\u2014like in the word bacteriolytic .",
+        "definition": "all about the schwa: the sneaky sound! Be like the schwa\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014the chillest sound in English\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014never stressed! But if you\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019re spelling, the schwa can actually stress you out, because it can sound like any vowel: a, e, i, o, u, or y! That\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s why words with a schwa can be tricky to spell . Here\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s a pro tip: ask for the word\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s language of origin . If it\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s from Greek, try guessing an \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201co\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201d for that sneaky schwa sound\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014like in the word bacteriolytic .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -16322,7 +16304,7 @@ export const words: Word[] = [
     {
         "word": "gyro.  habeas corpus",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A Greek dish of meat cooked on a vertical rotisserie; also short for gyroscope.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -16439,7 +16421,7 @@ export const words: Word[] = [
     {
         "word": "Hathor",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "An ancient Egyptian goddess associated with love, music, and maternity.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -16808,7 +16790,7 @@ export const words: Word[] = [
     {
         "word": "hydriotaphia",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Urn burial or the practice of placing cremated remains in urns.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -16871,7 +16853,7 @@ export const words: Word[] = [
     {
         "word": "hyrax.  ibex",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A small, thickset, herbivorous mammal native to Africa and the Middle East, resembling a large rodent but more closely related to elephants.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -17411,7 +17393,7 @@ export const words: Word[] = [
     {
         "word": "Isle Royale.  jacamar",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A remote wilderness island in Lake Superior, forming a U.S. National Park in Michigan.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -17483,7 +17465,7 @@ export const words: Word[] = [
     {
         "word": "jarl",
         "difficulty": "TwoBee",
-        "definition": "The Bee\\\\\\\\u2019s Bookshelf Welcome to The Bee\\\\\\\\u2019s Bookshelf, the official online book club of the Scripps National Spelling Bee! It\\\\\\\\u2019s a super fun place where stories and spelling come together .",
+        "definition": "The Bee\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s Bookshelf Welcome to The Bee\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s Bookshelf, the official online book club of the Scripps National Spelling Bee! It\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s a super fun place where stories and spelling come together .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -17555,7 +17537,7 @@ export const words: Word[] = [
     {
         "word": "jimberjawed",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Having a projecting lower jaw; having an awkward or misaligned jaw.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -17600,7 +17582,7 @@ export const words: Word[] = [
     {
         "word": "jornada",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A Spanish term for a day's journey or a stage of travel, especially across desert terrain.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -17661,9 +17643,9 @@ export const words: Word[] = [
         "id": "1961"
     },
     {
-        "word": "juxtapose.  kaiser",
+        "word": "juxtapose",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "To place side by side, especially for comparison or contrast.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -17789,7 +17771,7 @@ export const words: Word[] = [
     {
         "word": "krausen",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The thick, foamy head that forms on fermenting beer; also the peak of fermentation activity.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -17823,9 +17805,9 @@ export const words: Word[] = [
         "id": "1979"
     },
     {
-        "word": "kung pao.  labroid",
+        "word": "kung pao",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A spicy Chinese stir-fry dish made with meat, peanuts, and chili peppers.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -17861,7 +17843,7 @@ export const words: Word[] = [
     {
         "word": "ladang",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A form of shifting cultivation practiced in Southeast Asia involving slash-and-burn agriculture.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -17915,7 +17897,7 @@ export const words: Word[] = [
     {
         "word": "lanolated",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Containing or treated with lanolin.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -18336,9 +18318,9 @@ export const words: Word[] = [
         "id": "2036"
     },
     {
-        "word": "luxuriate.  macadam",
+        "word": "luxuriate",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "To enjoy oneself in a luxurious way; to thrive or grow profusely.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -18860,7 +18842,7 @@ export const words: Word[] = [
     {
         "word": "minestra",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "An Italian soup made with vegetables and often pasta or rice.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -18914,7 +18896,7 @@ export const words: Word[] = [
     {
         "word": "moano",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A goatfish found in Hawaiian waters.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -19022,7 +19004,7 @@ export const words: Word[] = [
     {
         "word": "Motrin",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A brand name for ibuprofen, a nonsteroidal anti-inflammatory drug.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -19031,7 +19013,7 @@ export const words: Word[] = [
     {
         "word": "movimento",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "An Italian musical term meaning 'movement' or 'motion.'",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -19155,9 +19137,9 @@ export const words: Word[] = [
         "id": "2127"
     },
     {
-        "word": "mythopoeic.  nabobs",
+        "word": "mythopoeic",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Relating to the making of myths; capable of creating myths.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -19490,7 +19472,7 @@ export const words: Word[] = [
     {
         "word": "nuzzer.  obie",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A ceremonial gift or offering presented to a superior, especially in South Asian cultures.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -19581,7 +19563,7 @@ export const words: Word[] = [
         "word": "occultation",
         "difficulty": "TwoBee",
         "definition": "the state of being hidden from view or lost to notice",
-        "origin": "Middle English occultacion, borrowed from Latin occultātiōn-, occultātiō \\",
+        "origin": "Middle English occultacion, borrowed from Latin occultātiōn-, occultātiō \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "2175"
@@ -19920,9 +19902,9 @@ export const words: Word[] = [
         "id": "2212"
     },
     {
-        "word": "oxalis.  pabulum",
+        "word": "oxalis",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A genus of flowering plants known as wood sorrels, with clover-like leaves.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -20246,7 +20228,7 @@ export const words: Word[] = [
     {
         "word": "pashmina",
         "difficulty": "TwoBee",
-        "definition": "OR pass\\\\\\\\u00e9e",
+        "definition": "OR pass\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e9e",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -20597,7 +20579,7 @@ export const words: Word[] = [
     {
         "word": "pervenche",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The French word for periwinkle, referring to the plant or its bluish-purple color.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -20732,7 +20714,7 @@ export const words: Word[] = [
     {
         "word": "phyteral",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Relating to or affecting plants.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -21272,7 +21254,7 @@ export const words: Word[] = [
     {
         "word": "posthumous",
         "difficulty": "TwoBee",
-        "definition": "occurring after or following someone\\\\\\\\u2019s death .",
+        "definition": "occurring after or following someone\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s death .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -21362,7 +21344,7 @@ export const words: Word[] = [
     {
         "word": "preprandial",
         "difficulty": "TwoBee",
-        "definition": "A predinner drink; an ap\\\\\\\\u00e9ritif.",
+        "definition": "A predinner drink; an ap\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e9ritif.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -21398,7 +21380,7 @@ export const words: Word[] = [
     {
         "word": "prespinous",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Situated in front of or anterior to a spine or spiny process.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -21470,7 +21452,7 @@ export const words: Word[] = [
     {
         "word": "privatim",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "In private; privately.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -21567,9 +21549,9 @@ export const words: Word[] = [
         "id": "2395"
     },
     {
-        "word": "prolix.  quadriceps",
+        "word": "prolix",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Using or containing too many words; tediously lengthy.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -21713,7 +21695,7 @@ export const words: Word[] = [
     {
         "word": "QWERTY.  rabato",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The standard keyboard layout for Latin-script alphabets.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -21731,7 +21713,7 @@ export const words: Word[] = [
     {
         "word": "ramark",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A radar beacon that transmits continuously.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -21740,7 +21722,7 @@ export const words: Word[] = [
     {
         "word": "rambla",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A dry riverbed or seasonal stream in Spain; also a tree-lined promenade.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -21785,7 +21767,7 @@ export const words: Word[] = [
     {
         "word": "raptatorial",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Adapted for seizing prey, as certain legs of insects.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -21803,7 +21785,7 @@ export const words: Word[] = [
     {
         "word": "rariora",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Rare or unusual things, especially rare books or collectibles.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -22352,7 +22334,7 @@ export const words: Word[] = [
     {
         "word": "reverberant",
         "difficulty": "TwoBee",
-        "definition": "(of a lion\\\\\\\\u2019s tail) Turned up sigmoidally, with the end pointing outward; reboundant.",
+        "definition": "(of a lion\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s tail) Turned up sigmoidally, with the end pointing outward; reboundant.",
         "origin": "",
         "partOfSpeech": "adjective",
         "sentence": "",
@@ -22530,9 +22512,9 @@ export const words: Word[] = [
         "id": "2502"
     },
     {
-        "word": "rustication.  sabbatical",
+        "word": "rustication",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The act of living in or moving to the countryside; in architecture, masonry with deep joints.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -22550,7 +22532,7 @@ export const words: Word[] = [
     {
         "word": "sacrament",
         "difficulty": "TwoBee",
-        "definition": "A sacred act or ceremony in Christianity. In Catholic theology, a sacrament is defined as \\\\\\\\",
+        "definition": "A sacred act or ceremony in Christianity. In Catholic theology, a sacrament is defined as \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -22658,7 +22640,7 @@ export const words: Word[] = [
     {
         "word": "sashay",
         "difficulty": "TwoBee",
-        "definition": "A chass\\\\\\\\u00e9.",
+        "definition": "A chass\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e9.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -22683,27 +22665,18 @@ export const words: Word[] = [
         "id": "2519"
     },
     {
-        "word": "sauerkraut (or sourcrout",
+        "word": "sauerkraut",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Finely cut fermented cabbage, a traditional German dish.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
         "id": "2520"
     },
     {
-        "word": "sourkrout)",
-        "difficulty": "TwoBee",
-        "definition": "",
-        "origin": "",
-        "partOfSpeech": "",
-        "sentence": "",
-        "id": "2521"
-    },
-    {
         "word": "Scamozzi",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "Vincenzo Scamozzi, an Italian architect of the late Renaissance known for his treatise on architecture.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -22901,7 +22874,7 @@ export const words: Word[] = [
     {
         "word": "selenite",
         "difficulty": "TwoBee",
-        "definition": "A soft, glassy form of gypsum (chemical formula CaSO4\\\\\\\\u00b72H2O).",
+        "definition": "A soft, glassy form of gypsum (chemical formula CaSO4\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00b72H2O).",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -23181,7 +23154,7 @@ export const words: Word[] = [
         "word": "simultaneity",
         "difficulty": "TwoBee",
         "definition": "existing or occurring at the same time : exactly coincident",
-        "origin": "borrowed from Medieval Latin simultāneus \\",
+        "origin": "borrowed from Medieval Latin simultāneus \\\\\\\\",
         "partOfSpeech": "adjective",
         "sentence": "",
         "id": "2575"
@@ -23495,7 +23468,7 @@ export const words: Word[] = [
     {
         "word": "sponsalia",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "In Roman and canon law, a formal betrothal or engagement to marry.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -23621,7 +23594,7 @@ export const words: Word[] = [
     {
         "word": "stellular",
         "difficulty": "TwoBee",
-        "definition": "why is it so hard to spell English words? Ever wonder why spelling in English can be so confusing? Here\\\\\\\\u2019s the scoop: English didn\\\\\\\\u2019t just grow on its own\\\\\\\\u2014it borrowed words from tons of other languages! That means it\\\\\\\\u2019s a big mix (or hodgepodge!) of words, sounds, and spellings that don\\\\\\\\u2019t always match up .",
+        "definition": "why is it so hard to spell English words? Ever wonder why spelling in English can be so confusing? Here\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s the scoop: English didn\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019t just grow on its own\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014it borrowed words from tons of other languages! That means it\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s a big mix (or hodgepodge!) of words, sounds, and spellings that don\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019t always match up .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -23693,7 +23666,7 @@ export const words: Word[] = [
     {
         "word": "stratosphere",
         "difficulty": "TwoBee",
-        "definition": "Collectively, those layers of the Earth\\\\\\\\u2019s crust which primarily comprise stratified deposits.",
+        "definition": "Collectively, those layers of the Earth\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s crust which primarily comprise stratified deposits.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -24096,9 +24069,9 @@ export const words: Word[] = [
         "id": "2676"
     },
     {
-        "word": "syringe.  tabernacle",
+        "word": "syringe",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A medical instrument used to inject or withdraw fluids.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -24414,7 +24387,7 @@ export const words: Word[] = [
         "word": "tentacled",
         "difficulty": "TwoBee",
         "definition": "any of various elongated flexible usually tactile or prehensile processes borne by invertebrate animals chiefly on the head or about the mouth",
-        "origin": "borrowed from New Latin tentāculum, from Latin temptāre, tentāre \\",
+        "origin": "borrowed from New Latin tentāculum, from Latin temptāre, tentāre \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "2712"
@@ -24593,7 +24566,7 @@ export const words: Word[] = [
     {
         "word": "tichodrome",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The wallcreeper, a small passerine bird that climbs on rock faces.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -24611,7 +24584,7 @@ export const words: Word[] = [
     {
         "word": "tikkun",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "In Jewish mysticism, the concept of repairing or healing the world; a book of scriptural readings.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -24872,7 +24845,7 @@ export const words: Word[] = [
     {
         "word": "trochee",
         "difficulty": "TwoBee",
-        "definition": "trompe l\\\\\\\\u2019oeil",
+        "definition": "trompe l\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019oeil",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -24890,7 +24863,7 @@ export const words: Word[] = [
     {
         "word": "trotteur",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A French term for a walking or day shoe with a medium heel.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -25160,7 +25133,7 @@ export const words: Word[] = [
     {
         "word": "toorie",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A Scottish term for a pom-pom or small ball of wool on top of a cap.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -25232,7 +25205,7 @@ export const words: Word[] = [
     {
         "word": "toties quoties",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A Latin phrase meaning 'as often as' or 'on each occasion.'",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -25404,7 +25377,7 @@ export const words: Word[] = [
         "word": "trepanation",
         "difficulty": "TwoBee",
         "definition": "to use a trephine on (the skull)",
-        "origin": "Middle English trepanen \\",
+        "origin": "Middle English trepanen \\\\\\\\",
         "partOfSpeech": "verb",
         "sentence": "",
         "id": "2822"
@@ -25707,9 +25680,9 @@ export const words: Word[] = [
         "id": "2855"
     },
     {
-        "word": "typhlology.  ubiquity",
+        "word": "typhlology",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The study of blindness and the education of blind people.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -25835,7 +25808,7 @@ export const words: Word[] = [
     {
         "word": "univocal",
         "difficulty": "TwoBee",
-        "definition": "beyond the letters Spelling is awesome\\\\\\\\u2014but knowing what words mean? That\\\\\\\\u2019s next-level cool! That\\\\\\\\u2019s why the Scripps National Spelling Bee added vocabulary questions to the mix! They first showed up on the written test in 2013, and in 2021, they became part of the oral rounds at the National Competition .",
+        "definition": "beyond the letters Spelling is awesome\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014but knowing what words mean? That\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s next-level cool! That\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s why the Scripps National Spelling Bee added vocabulary questions to the mix! They first showed up on the written test in 2013, and in 2021, they became part of the oral rounds at the National Competition .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -25941,9 +25914,9 @@ export const words: Word[] = [
         "id": "2881"
     },
     {
-        "word": "uvula.  vaccination",
+        "word": "uvula",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The fleshy extension at the back of the soft palate that hangs above the throat.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -26015,7 +25988,7 @@ export const words: Word[] = [
     {
         "word": "vandalize",
         "difficulty": "TwoBee",
-        "definition": "To needlessly destroy or deface other people\\\\\\\\u2019s property or public property; to commit vandalism.",
+        "definition": "To needlessly destroy or deface other people\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s property or public property; to commit vandalism.",
         "origin": "",
         "partOfSpeech": "verb",
         "sentence": "",
@@ -26159,7 +26132,7 @@ export const words: Word[] = [
     {
         "word": "vendage",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The grape harvest or vintage season; also spelled vendange.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -26205,7 +26178,7 @@ export const words: Word[] = [
         "word": "ventail",
         "difficulty": "TwoBee",
         "definition": "the lower movable front of a medieval helmet",
-        "origin": "Middle English ventaile, borrowed from Anglo-French ventaille, from venter \\",
+        "origin": "Middle English ventaile, borrowed from Anglo-French ventaille, from venter \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "2911"
@@ -26420,7 +26393,7 @@ export const words: Word[] = [
     {
         "word": "virtuoso",
         "difficulty": "TwoBee",
-        "definition": "An expert in virt\\\\\\\\u00f9 or art objects and antiquities; a connoisseur.",
+        "definition": "An expert in virt\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00f9 or art objects and antiquities; a connoisseur.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -26508,9 +26481,9 @@ export const words: Word[] = [
         "id": "2944"
     },
     {
-        "word": "Vulcan.  wainwright",
+        "word": "Vulcan",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "The Roman god of fire and metalworking; also a hypothetical planet.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -26573,7 +26546,7 @@ export const words: Word[] = [
     {
         "word": "werf",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A South African term for a farmyard or homestead enclosure.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -26672,7 +26645,7 @@ export const words: Word[] = [
     {
         "word": "wootz.  yabbies",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A type of high-carbon steel originally made in South Asia, known for its distinctive patterns.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -26715,9 +26688,9 @@ export const words: Word[] = [
         "id": "2967"
     },
     {
-        "word": "Yoruba.  zeitgeist",
+        "word": "Yoruba",
         "difficulty": "TwoBee",
-        "definition": "",
+        "definition": "A people of southwestern Nigeria and their language, one of the largest African ethnic groups.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -26825,7 +26798,7 @@ export const words: Word[] = [
     {
         "word": "à fond",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A French phrase meaning 'thoroughly' or 'to the utmost.'",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -26834,7 +26807,7 @@ export const words: Word[] = [
     {
         "word": "à la grecque",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "In the Greek style; a cooking term for vegetables prepared in olive oil with herbs.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -26897,7 +26870,7 @@ export const words: Word[] = [
     {
         "word": "aceituna",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The Spanish word for olive.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -26907,7 +26880,7 @@ export const words: Word[] = [
         "word": "acerola",
         "difficulty": "ThreeBee",
         "definition": "any of several tropical American shrubs (genus Malpighia of the family Malpighiaceae); especially : a large shrub or small tree (Malpighia emarginata synonym M. glabra) found from Texas to northern South America and the West Indies that has mildly acid cherrylike fruits very rich in vitamin C",
-        "origin": "borrowed from American Spanish, going back to Spanish, \\",
+        "origin": "borrowed from American Spanish, going back to Spanish, \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "2989"
@@ -27059,7 +27032,7 @@ export const words: Word[] = [
     {
         "word": "aes rude",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "In ancient Rome, rough or unworked bronze used as primitive currency before minted coins.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27078,7 +27051,7 @@ export const words: Word[] = [
         "word": "Aesir",
         "difficulty": "ThreeBee",
         "definition": "the principal race of Norse gods",
-        "origin": "borrowed from Old Norse Æsir, plural of áss \\",
+        "origin": "borrowed from Old Norse Æsir, plural of áss \\\\\\\\",
         "partOfSpeech": "plural noun",
         "sentence": "",
         "id": "3008"
@@ -27203,7 +27176,7 @@ export const words: Word[] = [
     {
         "word": "Aitutakian",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A person from or relating to Aitutaki, an island in the Cook Islands.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27221,7 +27194,7 @@ export const words: Word[] = [
     {
         "word": "akkum",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "In Jewish law, a term referring to non-Jews, especially idol worshippers.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27257,7 +27230,7 @@ export const words: Word[] = [
     {
         "word": "alisier",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A French term for the whitebeam tree or its wood.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27284,7 +27257,7 @@ export const words: Word[] = [
     {
         "word": "almuerzo",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The Spanish word for lunch.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27347,7 +27320,7 @@ export const words: Word[] = [
     {
         "word": "amphistylar",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Having columns at both ends, as in certain ancient Greek temples.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27365,7 +27338,7 @@ export const words: Word[] = [
     {
         "word": "anabathmoi",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "In the Eastern Orthodox Church, a type of antiphon or liturgical song.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27383,7 +27356,7 @@ export const words: Word[] = [
     {
         "word": "anathema",
         "difficulty": "ThreeBee",
-        "definition": "ancien r\\\\\\\\u00e9gime",
+        "definition": "ancien r\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e9gime",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27446,7 +27419,7 @@ export const words: Word[] = [
     {
         "word": "anomaliped",
         "difficulty": "ThreeBee",
-        "definition": "three bee difficulty level: Words with a single asterisk (*) indicate a primarily British spelling . A double asterisk (**) indicates the spelling that is more widely used . A complete list of the words that were added to this year\\\\\\\\u2019s study list can be found on page 56 .",
+        "definition": "three bee difficulty level: Words with a single asterisk (*) indicate a primarily British spelling . A double asterisk (**) indicates the spelling that is more widely used . A complete list of the words that were added to this year\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s study list can be found on page 56 .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27464,7 +27437,7 @@ export const words: Word[] = [
     {
         "word": "antenatus",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A person born before a particular event, especially before a country's independence.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27482,7 +27455,7 @@ export const words: Word[] = [
     {
         "word": "Apabhramsa",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A group of vernacular languages in medieval India that evolved from Prakrit and preceded modern Indo-Aryan languages.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27518,7 +27491,7 @@ export const words: Word[] = [
     {
         "word": "Apistogramma",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A genus of small, colorful South American cichlid fish popular in aquariums.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27608,7 +27581,7 @@ export const words: Word[] = [
     {
         "word": "ardoise",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The French word for slate; also refers to a slate-gray color.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27635,7 +27608,7 @@ export const words: Word[] = [
     {
         "word": "as nas",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A Persian card game considered an ancestor of modern poker.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27663,7 +27636,7 @@ export const words: Word[] = [
         "word": "astaxanthin",
         "difficulty": "ThreeBee",
         "definition": "a carotenoid pigment C40H52O4 found in red- or pink-colored aquatic organisms (such as shrimp, lobster, and salmon) and the feathers of some birds that is used especially as a food coloring and dietary supplement",
-        "origin": "borrowed from German, from Astacin, an oxidation product of astaxanthin (from New Latin Astacus, genus including Astacus gammarus, the European lobster—now Homarus gammarus— + German -in {et_link|-in:1|-in:1}) + Xanthin \\",
+        "origin": "borrowed from German, from Astacin, an oxidation product of astaxanthin (from New Latin Astacus, genus including Astacus gammarus, the European lobster—now Homarus gammarus— + German -in {et_link|-in:1|-in:1}) + Xanthin \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "3073"
@@ -27707,7 +27680,7 @@ export const words: Word[] = [
     {
         "word": "au bleu",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A French cooking method where fish is cooked immediately after killing in a court-bouillon.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27752,16 +27725,16 @@ export const words: Word[] = [
     {
         "word": "azotea",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A flat roof or rooftop terrace common in Spanish and Latin American architecture.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
         "id": "3083"
     },
     {
-        "word": "azulejo.  baboen",
+        "word": "azulejo",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A form of Spanish and Portuguese painted tin-glazed ceramic tilework.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -27923,7 +27896,7 @@ export const words: Word[] = [
     {
         "word": "Beauceron",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A French breed of large herding dog with a distinctive black and tan coat.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28004,7 +27977,7 @@ export const words: Word[] = [
     {
         "word": "bergère",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A French upholstered armchair with an enclosed back and sides.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28013,7 +27986,7 @@ export const words: Word[] = [
     {
         "word": "Bernoulli effect",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The principle that an increase in fluid velocity produces a decrease in pressure.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28049,7 +28022,7 @@ export const words: Word[] = [
     {
         "word": "Bewusstseinslage",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A German psychological term referring to a conscious attitude or state of awareness.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28058,7 +28031,7 @@ export const words: Word[] = [
     {
         "word": "Bezier curve",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A parametric curve used in computer graphics, defined by control points that determine its shape.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28112,7 +28085,7 @@ export const words: Word[] = [
     {
         "word": "bismillah",
         "difficulty": "ThreeBee",
-        "definition": "\\\\\\\\u2014 used as a Muslim invocation .",
+        "definition": "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014 used as a Muslim invocation .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28175,7 +28148,7 @@ export const words: Word[] = [
     {
         "word": "boniface",
         "difficulty": "ThreeBee",
-        "definition": "\\\\\\\\u00e0 fond \\\\\\\\u00e0 la grecque ab aeterno",
+        "definition": "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e0 fond \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e0 la grecque ab aeterno",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28319,7 +28292,7 @@ export const words: Word[] = [
     {
         "word": "buñuelo",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A Spanish and Latin American fried dough pastry, often sprinkled with sugar or cinnamon.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28337,7 +28310,7 @@ export const words: Word[] = [
     {
         "word": "burelage",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "In philately, a background pattern printed on stamps to prevent reuse or counterfeiting.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28355,7 +28328,7 @@ export const words: Word[] = [
     {
         "word": "Burkinabe.  cabochon",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A person from or relating to Burkina Faso, a country in West Africa.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28374,7 +28347,7 @@ export const words: Word[] = [
         "word": "ca’canny",
         "difficulty": "ThreeBee",
         "definition": "slowdown",
-        "origin": "borrowed from Scots, \\",
+        "origin": "borrowed from Scots, \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "3152"
@@ -28472,7 +28445,7 @@ export const words: Word[] = [
     {
         "word": "calamondin",
         "difficulty": "ThreeBee",
-        "definition": "A small decorative evergreen citrus tree, of the hybrid Citrus \\\\\\\\u00d7 microcarpa, syn. \\\\\\\\u00d7Citrofortunella mitis, sometimes cultivated for its fruit.",
+        "definition": "A small decorative evergreen citrus tree, of the hybrid Citrus \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00d7 microcarpa, syn. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00d7Citrofortunella mitis, sometimes cultivated for its fruit.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -28508,7 +28481,7 @@ export const words: Word[] = [
     {
         "word": "calusar",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A traditional Romanian ceremonial folk dance performed by a group of men.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28605,27 +28578,18 @@ export const words: Word[] = [
         "id": "3177"
     },
     {
-        "word": "carrageenan (or carrageenin",
+        "word": "carrageenan",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A gelatinous substance extracted from red seaweed, used as a thickening agent in foods.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
         "id": "3178"
     },
     {
-        "word": "carragheenin)",
-        "difficulty": "ThreeBee",
-        "definition": "",
-        "origin": "",
-        "partOfSpeech": "",
-        "sentence": "",
-        "id": "3179"
-    },
-    {
         "word": "Carrickmacross",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A type of Irish lace making that originated in County Monaghan.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28652,7 +28616,7 @@ export const words: Word[] = [
     {
         "word": "Casimir effect",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A quantum mechanical phenomenon where two uncharged plates in a vacuum attract each other.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28661,7 +28625,7 @@ export const words: Word[] = [
     {
         "word": "Castalia",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "In Greek mythology, a nymph transformed into a fountain on Mount Parnassus, sacred to Apollo and the Muses.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -28707,7 +28671,7 @@ export const words: Word[] = [
         "word": "cavalletti",
         "difficulty": "ThreeBee",
         "definition": "a series of timber jumps that are adjustable in height for schooling horses",
-        "origin": "borrowed from Italian, plural of cavalletto \\",
+        "origin": "borrowed from Italian, plural of cavalletto \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "3189"
@@ -28716,7 +28680,7 @@ export const words: Word[] = [
         "word": "caveola",
         "difficulty": "ThreeBee",
         "definition": "a flask-shaped invagination of a cell's plasma membrane that is involved especially in endocytosis by pinching off and forming vesicles in the cytoplasm",
-        "origin": "borrowed from New Latin caveola intracellularis, literally, \\",
+        "origin": "borrowed from New Latin caveola intracellularis, literally, \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "3190"
@@ -28913,7 +28877,7 @@ export const words: Word[] = [
     {
         "word": "ciénaga",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A Spanish term for a marsh, swamp, or wetland area.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29084,7 +29048,7 @@ export const words: Word[] = [
     {
         "word": "conteur",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A French word for a storyteller or narrator.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29291,7 +29255,7 @@ export const words: Word[] = [
     {
         "word": "cynocephali.  daguerreotype",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Mythical dog-headed people described in ancient and medieval literature.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29381,7 +29345,7 @@ export const words: Word[] = [
     {
         "word": "Déné",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A group of Indigenous peoples and languages in northern Canada and Alaska.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29489,7 +29453,7 @@ export const words: Word[] = [
     {
         "word": "domnei",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The concept of chivalric love service in medieval Provençal poetry.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29516,7 +29480,7 @@ export const words: Word[] = [
     {
         "word": "drahthaar",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A German wirehaired pointer, a versatile hunting dog breed.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29525,7 +29489,7 @@ export const words: Word[] = [
     {
         "word": "Dubhe",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The second-brightest star in the constellation Ursa Major, part of the Big Dipper.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29579,7 +29543,7 @@ export const words: Word[] = [
     {
         "word": "dysphasia.  ecchymosis",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A language disorder affecting the ability to produce or understand speech, often due to brain injury.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29705,7 +29669,7 @@ export const words: Word[] = [
     {
         "word": "emphysema",
         "difficulty": "ThreeBee",
-        "definition": "en arri\\\\\\\\u00e8re Enoch Arden",
+        "definition": "en arri\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e8re Enoch Arden",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29741,7 +29705,7 @@ export const words: Word[] = [
     {
         "word": "epideictic",
         "difficulty": "ThreeBee",
-        "definition": "Of or pertaining to rhetoric of ceremony, declamation, and demonstration, most often the rhetoric of funerals and other formal events. One of the three branches, or \\\\\\\\",
+        "definition": "Of or pertaining to rhetoric of ceremony, declamation, and demonstration, most often the rhetoric of funerals and other formal events. One of the three branches, or \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",
         "origin": "",
         "partOfSpeech": "adjective",
         "sentence": "",
@@ -29759,7 +29723,7 @@ export const words: Word[] = [
     {
         "word": "epistemology",
         "difficulty": "ThreeBee",
-        "definition": "The branch of philosophy dealing with the study of knowledge; theory of knowledge, asking such questions as \\\\\\\\",
+        "definition": "The branch of philosophy dealing with the study of knowledge; theory of knowledge, asking such questions as \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -29777,7 +29741,7 @@ export const words: Word[] = [
     {
         "word": "Equatoguinean",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A person from or relating to Equatorial Guinea, a country in Central Africa.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29786,7 +29750,7 @@ export const words: Word[] = [
     {
         "word": "Erewhonian",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Relating to Erewhon, the satirical utopia in Samuel Butler's 1872 novel.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -29946,9 +29910,9 @@ export const words: Word[] = [
         "id": "3326"
     },
     {
-        "word": "exchequer.  faipule",
+        "word": "exchequer",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A royal or national treasury; the British government department dealing with public revenue.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30020,7 +29984,7 @@ export const words: Word[] = [
     {
         "word": "Feldenkrais",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A method of somatic education that uses gentle movement to improve physical function and awareness.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30038,7 +30002,7 @@ export const words: Word[] = [
     {
         "word": "ferruginous",
         "difficulty": "ThreeBee",
-        "definition": "f\\\\\\\\u00eate champ\\\\\\\\u00eatre",
+        "definition": "f\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00eate champ\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00eatre",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30047,7 +30011,7 @@ export const words: Word[] = [
     {
         "word": "fête champêtre",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A French term for an outdoor festival or garden party; also a genre of pastoral painting.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30065,7 +30029,7 @@ export const words: Word[] = [
     {
         "word": "fibromyalgia",
         "difficulty": "ThreeBee",
-        "definition": "fin de si\\\\\\\\u00e8cle of or relating to the end of a century .",
+        "definition": "fin de si\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e8cle of or relating to the end of a century .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30164,7 +30128,7 @@ export const words: Word[] = [
     {
         "word": "furuncle.  gabarit",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A boil; a painful, pus-filled infection of a hair follicle.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30192,7 +30156,7 @@ export const words: Word[] = [
         "word": "Gaia",
         "difficulty": "ThreeBee",
         "definition": "the hypothesis that the living and nonliving components of earth function as a single system in such a way that the living component regulates and maintains conditions (such as the temperature of the ocean or composition of the atmosphere) so as to be suitable for life; also : this system regarded as a single organism",
-        "origin": "after Greek Gaîa, a primordial earth goddess in Greek myth, literally, \\",
+        "origin": "after Greek Gaîa, a primordial earth goddess in Greek myth, literally, \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "3354"
@@ -30488,7 +30452,7 @@ export const words: Word[] = [
     {
         "word": "Grundriss",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A German word meaning 'ground plan' or 'outline,' used for architectural or scholarly works.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30515,7 +30479,7 @@ export const words: Word[] = [
     {
         "word": "guapena",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A type of fish found in South American waters.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30596,7 +30560,7 @@ export const words: Word[] = [
     {
         "word": "gypsophila.  haikai",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A genus of flowering plants commonly known as baby's breath.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30677,7 +30641,7 @@ export const words: Word[] = [
     {
         "word": "hei-tiki",
         "difficulty": "ThreeBee",
-        "definition": "An ornamental greenstone pendant among the M\\\\\\\\u0101ori, worn around the neck.",
+        "definition": "An ornamental greenstone pendant among the M\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u0101ori, worn around the neck.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -30700,15 +30664,6 @@ export const words: Word[] = [
         "partOfSpeech": "",
         "sentence": "",
         "id": "3410"
-    },
-    {
-        "word": "hennin",
-        "difficulty": "ThreeBee",
-        "definition": "A headdress in the shape of a cone, \"steeple\" or truncated cone worn by European women of the nobility in medieval times.",
-        "origin": "",
-        "partOfSpeech": "Noun",
-        "sentence": "",
-        "id": "3411"
     },
     {
         "word": "henotheism",
@@ -30830,7 +30785,7 @@ export const words: Word[] = [
     {
         "word": "houppelande",
         "difficulty": "ThreeBee",
-        "definition": "the first-ever Champion Showdown! To celebrate the Bee\\\\\\\\u2019s 100th birthday in 2025, we brought together eight legendary champions for the very first Champion Showdown! Imagine a spelling bee mixed with Who Wants to Be a Millionaire and Family Feud\\\\\\\\u2014that\\\\\\\\u2019s how these spelling stars showed off their skills .",
+        "definition": "the first-ever Champion Showdown! To celebrate the Bee\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s 100th birthday in 2025, we brought together eight legendary champions for the very first Champion Showdown! Imagine a spelling bee mixed with Who Wants to Be a Millionaire and Family Feud\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014that\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s how these spelling stars showed off their skills .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -30873,22 +30828,13 @@ export const words: Word[] = [
         "id": "3429"
     },
     {
-        "word": "hutia (or jutia",
+        "word": "hutia",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Large rodents native to the Caribbean islands.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
         "id": "3430"
-    },
-    {
-        "word": "utia)",
-        "difficulty": "ThreeBee",
-        "definition": "",
-        "origin": "",
-        "partOfSpeech": "",
-        "sentence": "",
-        "id": "3431"
     },
     {
         "word": "hypaethral",
@@ -30920,7 +30866,7 @@ export const words: Word[] = [
     {
         "word": "hysteron proteron.  Iceni",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A rhetorical device where the logical order of events is reversed.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31010,7 +30956,7 @@ export const words: Word[] = [
     {
         "word": "insouciance",
         "difficulty": "ThreeBee",
-        "definition": "an attitude of not worrying about what others think of one\\\\\\\\u2019s work or behavior .",
+        "definition": "an attitude of not worrying about what others think of one\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s work or behavior .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31046,7 +30992,7 @@ export const words: Word[] = [
     {
         "word": "Inugsuk",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "An Inuit cultural tradition or archaeological phase in Arctic Canada.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31082,7 +31028,7 @@ export const words: Word[] = [
     {
         "word": "ivermectin.  jacqueminot",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "An antiparasitic medication used to treat various infections caused by parasites.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31172,7 +31118,7 @@ export const words: Word[] = [
     {
         "word": "Jungian.  kakapo",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Relating to the psychological theories of Carl Jung, especially regarding archetypes and the collective unconscious.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31289,7 +31235,7 @@ export const words: Word[] = [
     {
         "word": "kerril",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A small barrel or cask.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31334,7 +31280,7 @@ export const words: Word[] = [
     {
         "word": "Kjeldahl",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A method for determining the nitrogen content in organic compounds, named after Danish chemist Johan Kjeldahl.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31370,7 +31316,7 @@ export const words: Word[] = [
     {
         "word": "konditorei",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A German-style pastry shop or confectionery café.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31415,7 +31361,7 @@ export const words: Word[] = [
     {
         "word": "Kutani",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A style of Japanese porcelain originating from the Kutani region, known for its colorful overglaze decoration.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31433,7 +31379,7 @@ export const words: Word[] = [
     {
         "word": "kyphoplasty.  La Tène",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A minimally invasive surgical procedure to treat spinal compression fractures.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31478,7 +31424,7 @@ export const words: Word[] = [
     {
         "word": "lebensraum",
         "difficulty": "ThreeBee",
-        "definition": "(chiefly with reference to nations and peoples) Hitherto unoccupied \\\\\\\\u201cliving space\\\\\\\\u201d claimed as one\\\\\\\\u2019s rightful domain.",
+        "definition": "(chiefly with reference to nations and peoples) Hitherto unoccupied \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201cliving space\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201d claimed as one\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s rightful domain.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -31487,7 +31433,7 @@ export const words: Word[] = [
     {
         "word": "leberwurst",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A German liver sausage made from pork liver and other ingredients.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31523,7 +31469,7 @@ export const words: Word[] = [
     {
         "word": "lierre",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The French word for ivy.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31565,7 +31511,7 @@ export const words: Word[] = [
         θ
       
     
-    {\\displaystyle \\rho =a+b\\,\\sin \\,\\theta }
+    {\\\\\\\\displaystyle \\\\\\\\rho =a+b\\\\\\\\,\\\\\\\\sin \\\\\\\\,\\\\\\\\theta }
   
  or 
   
@@ -31582,7 +31528,7 @@ export const words: Word[] = [
         θ
       
     
-    {\\displaystyle \\rho =a+b\\,\\cos \\,\\theta }
+    {\\\\\\\\displaystyle \\\\\\\\rho =a+b\\\\\\\\,\\\\\\\\cos \\\\\\\\,\\\\\\\\theta }
   
 , of which the cardioid is a special case.",
         "origin": "",
@@ -31692,7 +31638,7 @@ export const words: Word[] = [
     {
         "word": "Lupercalia.  macchiato",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "An ancient Roman festival celebrated in February to avert evil spirits and purify the city.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31854,7 +31800,7 @@ export const words: Word[] = [
     {
         "word": "marcescent",
         "difficulty": "ThreeBee",
-        "definition": "withering without falling off \\\\\\\\u2014 used of a plant part .",
+        "definition": "withering without falling off \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014 used of a plant part .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31863,7 +31809,7 @@ export const words: Word[] = [
     {
         "word": "maringouin",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A French term for mosquito, especially used in Louisiana Creole.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31872,7 +31818,7 @@ export const words: Word[] = [
     {
         "word": "martinoe",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A type of rope or spar used on sailing vessels.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31890,7 +31836,7 @@ export const words: Word[] = [
     {
         "word": "mässig",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A German musical term meaning 'moderate' or 'moderately.'",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -31971,7 +31917,7 @@ export const words: Word[] = [
     {
         "word": "Metonic cycle",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A period of 19 years after which the phases of the moon recur on the same dates.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32178,7 +32124,7 @@ export const words: Word[] = [
     {
         "word": "myeloma.  Nabal",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A type of cancer that develops in plasma cells in the bone marrow.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32250,7 +32196,7 @@ export const words: Word[] = [
     {
         "word": "Ner Tamid",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The eternal light that burns above the ark in Jewish synagogues.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32268,7 +32214,7 @@ export const words: Word[] = [
     {
         "word": "Nethinim",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Temple servants mentioned in the Hebrew Bible who assisted the Levites.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32277,7 +32223,7 @@ export const words: Word[] = [
     {
         "word": "Nicoise",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "In the style of Nice, France; typically referring to a salad with olives, anchovies, and tomatoes.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32286,7 +32232,7 @@ export const words: Word[] = [
     {
         "word": "nidicolous",
         "difficulty": "ThreeBee",
-        "definition": "nest-dwelling, often in another animal\\\\\\\\u2019s nest .",
+        "definition": "nest-dwelling, often in another animal\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s nest .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32403,7 +32349,7 @@ export const words: Word[] = [
     {
         "word": "nyctinasty.  Oaxaca",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The rhythmic movement of plant parts in response to the daily cycle of light and dark.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32413,7 +32359,7 @@ export const words: Word[] = [
         "word": "obeisant",
         "difficulty": "ThreeBee",
         "definition": "a movement of the body made in token of respect or submission : bow",
-        "origin": "Middle English obeissance, obeysaunce \\",
+        "origin": "Middle English obeissance, obeysaunce \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "3597"
@@ -32599,9 +32545,9 @@ export const words: Word[] = [
         "id": "3617"
     },
     {
-        "word": "oxyacetylene.  paella",
+        "word": "oxyacetylene",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A mixture of oxygen and acetylene gases used for welding and cutting metals.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32728,7 +32674,7 @@ export const words: Word[] = [
         "word": "pareidolia",
         "difficulty": "ThreeBee",
         "definition": "the tendency to perceive a specific, often meaningful image in a random or ambiguous visual pattern",
-        "origin": "borrowed from German Pareidolie, from Greek par- {et_link|para-:1|para-:1} + eídōlon \\",
+        "origin": "borrowed from German Pareidolie, from Greek par- {et_link|para-:1|para-:1} + eídōlon \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "3632"
@@ -32808,7 +32754,7 @@ export const words: Word[] = [
     {
         "word": "Patripassianism",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "An early Christian theological belief that God the Father suffered on the cross with Christ.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32853,7 +32799,7 @@ export const words: Word[] = [
     {
         "word": "perruche",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The French word for parakeet.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32925,7 +32871,7 @@ export const words: Word[] = [
     {
         "word": "piatti",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Italian word for cymbals; also means 'plates.'",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -32934,7 +32880,7 @@ export const words: Word[] = [
     {
         "word": "piccata",
         "difficulty": "ThreeBee",
-        "definition": "thin slices of meat (such as veal) that are saut\\\\\\\\u00e9ed and served in a sauce of butter and lemon .",
+        "definition": "thin slices of meat (such as veal) that are saut\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e9ed and served in a sauce of butter and lemon .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33024,7 +32970,7 @@ export const words: Word[] = [
     {
         "word": "podotheca",
         "difficulty": "ThreeBee",
-        "definition": "point d\\\\\\\\u2019appui",
+        "definition": "point d\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019appui",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33105,7 +33051,7 @@ export const words: Word[] = [
     {
         "word": "poudre B",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A French smokeless gunpowder developed in the late 19th century.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33312,7 +33258,7 @@ export const words: Word[] = [
     {
         "word": "pruritus",
         "difficulty": "ThreeBee",
-        "definition": "adjectives vs. nouns: the /us/ sound showdown! \\\\\\\\u201cWait\\\\\\\\u2026 my word ends in an /us/ sound! Is it -us or -ous?!\\\\\\\\u201d Don\\\\\\\\u2019t panic\\\\\\\\u2014there\\\\\\\\u2019s a smart trick to help you decide! Just ask for the part of speech! If it\\\\\\\\u2019s a noun (a person, place or thing), -us is usually the way to go .",
+        "definition": "adjectives vs. nouns: the /us/ sound showdown! \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201cWait\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2026 my word ends in an /us/ sound! Is it -us or -ous?!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u201d Don\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019t panic\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014there\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s a smart trick to help you decide! Just ask for the part of speech! If it\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s a noun (a person, place or thing), -us is usually the way to go .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33492,7 +33438,7 @@ export const words: Word[] = [
     {
         "word": "Pyxis.  qiyas",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A small, faint constellation in the southern sky; also an ancient Greek cylindrical box.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33501,7 +33447,7 @@ export const words: Word[] = [
     {
         "word": "Quaoar",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A dwarf planet in the Kuiper Belt beyond Neptune.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33537,7 +33483,7 @@ export const words: Word[] = [
     {
         "word": "quoc-ngu",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The Vietnamese alphabet based on Latin script, developed by Portuguese missionaries.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33564,7 +33510,7 @@ export const words: Word[] = [
     {
         "word": "Quonset.  raclette",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A prefabricated structure made of corrugated metal in a semicircular shape, developed during WWII.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33627,7 +33573,7 @@ export const words: Word[] = [
     {
         "word": "Rayleigh wave",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A type of surface acoustic wave that travels along the surface of solids.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33735,7 +33681,7 @@ export const words: Word[] = [
     {
         "word": "rinceau",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "An ornamental design of intertwined foliage and scrollwork.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33753,7 +33699,7 @@ export const words: Word[] = [
     {
         "word": "risposta",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "An Italian term meaning 'response' or 'reply,' used in music for an answering voice or part.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33771,7 +33717,7 @@ export const words: Word[] = [
     {
         "word": "Robigalia",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "An ancient Roman festival held to protect crops from grain rust disease.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33780,7 +33726,7 @@ export const words: Word[] = [
     {
         "word": "rocaille",
         "difficulty": "ThreeBee",
-        "definition": "roi fain\\\\\\\\u00e9ant rond de jambe",
+        "definition": "roi fain\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e9ant rond de jambe",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33897,7 +33843,7 @@ export const words: Word[] = [
     {
         "word": "ruscus",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A genus of flowering plants known as butcher's broom, native to western and southern Europe.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33924,7 +33870,7 @@ export const words: Word[] = [
     {
         "word": "Ryeland",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A breed of sheep originating from Herefordshire, England.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -33933,7 +33879,7 @@ export const words: Word[] = [
     {
         "word": "Ryukyu.  saccharide",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A chain of Japanese islands extending from Kyushu to Taiwan.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34059,7 +34005,7 @@ export const words: Word[] = [
     {
         "word": "Sawan",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The fifth month of the Hindu calendar, typically falling in July-August.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34122,7 +34068,7 @@ export const words: Word[] = [
     {
         "word": "schwegel",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A type of German fife or transverse flute.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34141,7 +34087,7 @@ export const words: Word[] = [
         "word": "sciolistic",
         "difficulty": "ThreeBee",
         "definition": "a superficial show of learning",
-        "origin": "Late Latin sciolus {ldquo}smatterer, pretender to knowledge{rdquo} (Latin scius \\",
+        "origin": "Late Latin sciolus {ldquo}smatterer, pretender to knowledge{rdquo} (Latin scius \\\\\\\\",
         "partOfSpeech": "noun",
         "sentence": "",
         "id": "3789"
@@ -34410,7 +34356,7 @@ export const words: Word[] = [
     {
         "word": "spiedini",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Italian skewered and grilled meat or seafood kebabs.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34437,7 +34383,7 @@ export const words: Word[] = [
     {
         "word": "sprechstimme",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A vocal technique between speaking and singing, used prominently in 20th-century classical music.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34482,7 +34428,7 @@ export const words: Word[] = [
     {
         "word": "Strigolniki",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A 14th-century Russian religious sect that rejected the priesthood.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34491,7 +34437,7 @@ export const words: Word[] = [
     {
         "word": "stroganoff",
         "difficulty": "ThreeBee",
-        "definition": "A dish of saut\\\\\\\\u00e9ed pieces of beef (or a substitute) served in a sauce with sour cream.",
+        "definition": "A dish of saut\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e9ed pieces of beef (or a substitute) served in a sauce with sour cream.",
         "origin": "",
         "partOfSpeech": "noun",
         "sentence": "",
@@ -34518,7 +34464,7 @@ export const words: Word[] = [
     {
         "word": "sturnine",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Relating to or resembling starlings.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34536,7 +34482,7 @@ export const words: Word[] = [
     {
         "word": "styptic",
         "difficulty": "ThreeBee",
-        "definition": "succ\\\\\\\\u00e8s fou",
+        "definition": "succ\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u00e8s fou",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34617,7 +34563,7 @@ export const words: Word[] = [
     {
         "word": "sybaritic",
         "difficulty": "ThreeBee",
-        "definition": "join the Word Club! Looking for a cool new way to study? Check out the Word Club app\\\\\\\\u2014it\\\\\\\\u2019s totally free on the App Store and Google Play! With Word Club, mastering the 2026 Words of the Champions is super fun! Choose from quizzes and study games for both spelling and vocabulary . Plus, you get expert audio pronunciations straight from the Bee\\\\\\\\u2019s very own head pronouncer, Dr. Jacques Bailly .",
+        "definition": "join the Word Club! Looking for a cool new way to study? Check out the Word Club app\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014it\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s totally free on the App Store and Google Play! With Word Club, mastering the 2026 Words of the Champions is super fun! Choose from quizzes and study games for both spelling and vocabulary . Plus, you get expert audio pronunciations straight from the Bee\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s very own head pronouncer, Dr. Jacques Bailly .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34635,7 +34581,7 @@ export const words: Word[] = [
     {
         "word": "syncope.  taal",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A brief loss of consciousness; in linguistics, the loss of sounds from the interior of a word.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34761,7 +34707,7 @@ export const words: Word[] = [
     {
         "word": "Tchefuncte",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "An archaeological culture of Native Americans who lived in Louisiana around 500 BCE to 200 CE.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -34824,7 +34770,7 @@ export const words: Word[] = [
     {
         "word": "teneramente",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "An Italian musical term meaning 'tenderly.'",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -35085,7 +35031,7 @@ export const words: Word[] = [
     {
         "word": "toorie",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A Scottish term for a pom-pom or small ball of wool on top of a cap.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -35157,7 +35103,7 @@ export const words: Word[] = [
     {
         "word": "toties quoties",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A Latin phrase meaning 'as often as' or 'on each occasion.'",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -35329,7 +35275,7 @@ export const words: Word[] = [
         "word": "trepanation",
         "difficulty": "ThreeBee",
         "definition": "to use a trephine on (the skull)",
-        "origin": "Middle English trepanen \\",
+        "origin": "Middle English trepanen \\\\\\\\",
         "partOfSpeech": "verb",
         "sentence": "",
         "id": "3921"
@@ -35632,9 +35578,9 @@ export const words: Word[] = [
         "id": "3954"
     },
     {
-        "word": "typhlology.  ubi sunt",
+        "word": "ubi sunt",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A Latin phrase meaning 'where are they?', a literary motif lamenting the dead.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -35715,7 +35661,7 @@ export const words: Word[] = [
     {
         "word": "usufruct.  valvata",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The legal right to use and enjoy the profits of property belonging to another.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -35859,7 +35805,7 @@ export const words: Word[] = [
     {
         "word": "vizierial.  wabeno",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "Relating to or characteristic of a vizier, a high-ranking official in Islamic governments.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -35994,7 +35940,7 @@ export const words: Word[] = [
     {
         "word": "wushu.  xerogel",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A Chinese term for martial arts; also refers to a modern sport developed in China.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -36012,7 +35958,7 @@ export const words: Word[] = [
     {
         "word": "xyloglyphy.  yakitori",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "The art of wood carving or engraving.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -36066,7 +36012,7 @@ export const words: Word[] = [
     {
         "word": "yuloh.  zacate",
         "difficulty": "ThreeBee",
-        "definition": "",
+        "definition": "A Chinese sculling oar used to propel a boat with a twisting motion.",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -36075,7 +36021,7 @@ export const words: Word[] = [
     {
         "word": "zaibatsu",
         "difficulty": "ThreeBee",
-        "definition": "\\\\\\\\u2014 a machine that resurfaces ice .",
+        "definition": "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2014 a machine that resurfaces ice .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
@@ -36147,7 +36093,7 @@ export const words: Word[] = [
     {
         "word": "zugzwang",
         "difficulty": "ThreeBee",
-        "definition": "the need to make a move in chess when it is not to one\\\\\\\\u2019s advantage .",
+        "definition": "the need to make a move in chess when it is not to one\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u2019s advantage .",
         "origin": "",
         "partOfSpeech": "",
         "sentence": "",
