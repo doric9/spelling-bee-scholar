@@ -1,5 +1,7 @@
 # Spelling Bee Scholar 🐝
 
+[Live Site](https://spelling-bee-scholar.pages.dev)
+
 Spelling Bee Scholar is a modern web application designed to help students master the Scripps 4,000-word roster. It features intelligent flashcards, immersive mock competitions, and detailed etymology resources.
 
 ## Features
