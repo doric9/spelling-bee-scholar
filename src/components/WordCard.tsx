@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface WordCardProps {
   word: string;
@@ -23,11 +23,61 @@ export default function WordCard({
   onNext
 }: WordCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [voicesLoaded, setVoicesLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      const loadVoices = () => {
+        const v = window.speechSynthesis.getVoices();
+        if (v.length > 0) {
+          console.log("DEBUG: Voices found!", v.length);
+          setVoicesLoaded(true);
+        }
+      };
+
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+
+      // Force-check voices every 500ms until they appear (for MacOS stability)
+      const interval = setInterval(() => {
+        const v = window.speechSynthesis.getVoices();
+        if (v.length > 0) {
+          setVoicesLoaded(true);
+          clearInterval(interval);
+        }
+      }, 500);
+
+      return () => {
+        clearInterval(interval);
+        window.speechSynthesis.onvoiceschanged = null;
+      };
+    }
+  }, []);
 
   const speak = () => {
-    if ('speechSynthesis' in window) {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      const synth = window.speechSynthesis;
+      const voices = synth.getVoices();
+
+      // Find a reliable MacOS voice - prefer Samantha, then any en-US voice
+      const samantha = voices.find(v => v.name === 'Samantha');
+      const preferredVoice = samantha ||
+        voices.find(v => v.lang === 'en-US') ||
+        voices.find(v => v.lang.startsWith('en')) ||
+        voices[0];
+
+      console.log("DEBUG: Using voice:", preferredVoice?.name, "for word:", word);
+
+      synth.cancel();
+      synth.resume();
+
       const utterance = new SpeechSynthesisUtterance(word);
-      window.speechSynthesis.speak(utterance);
+      if (preferredVoice) utterance.voice = preferredVoice;
+      utterance.lang = 'en-US';
+      utterance.rate = 0.9;
+      utterance.volume = 1.0;
+
+      synth.speak(utterance);
     }
   };
 
@@ -88,7 +138,23 @@ export default function WordCard({
           )}
 
           <h2 style={{ fontSize: '3.5rem', marginBottom: '2rem', color: 'var(--foreground)' }}>{word}</h2>
-          <button onClick={(e) => { e.stopPropagation(); speak(); }} style={{ background: 'var(--secondary)', color: 'var(--foreground)', border: '1px solid var(--border)', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'none' }}>
+          <button
+            onClick={(e) => { e.stopPropagation(); speak(); }}
+            className={!voicesLoaded ? 'vibrate' : ''}
+            style={{
+              background: 'var(--secondary)',
+              color: 'var(--foreground)',
+              border: `1px solid ${voicesLoaded ? 'var(--border)' : 'var(--primary)'}`,
+              borderRadius: '50%',
+              width: '60px',
+              height: '60px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: 'none',
+              opacity: voicesLoaded ? 1 : 0.7
+            }}
+          >
             🔊
           </button>
         </div>

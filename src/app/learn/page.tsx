@@ -32,9 +32,14 @@ export default function LearnPage() {
             }
 
             if (user) {
-                await ensureUserDoc(user.uid, user.email || '');
-                const fetched = await getUserBookmarks(user.uid);
-                if (isMounted) setBookmarks(fetched);
+                try {
+                    await ensureUserDoc(user.uid, user.email || '');
+                    const fetched = await getUserBookmarks(user.uid);
+                    if (isMounted) setBookmarks(fetched);
+                } catch (error) {
+                    console.error("Firebase sync error - proceeding offline:", error);
+                    if (isMounted) setBookmarks(new Set());
+                }
             } else {
                 if (isMounted) setBookmarks(new Set());
             }

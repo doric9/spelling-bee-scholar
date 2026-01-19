@@ -18,39 +18,56 @@ export default function MockTestPage() {
     useEffect(() => {
         let isMounted = true;
 
+        const loadVoices = () => {
+            if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        };
+
         async function initialize() {
             // Initialize words only on client to avoid hydration mismatch
             const shuffled = [...words].sort(() => 0.5 - Math.random()).slice(0, 10);
+            if (isMounted) setTestList(shuffled);
 
-            if (isMounted) {
-                setTestList(shuffled);
-            }
-
-            // Warm up speech synthesis
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.getVoices();
+            loadVoices();
+            if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+                window.speechSynthesis.onvoiceschanged = loadVoices;
             }
         }
 
         initialize();
-        return () => { isMounted = false; };
+        return () => {
+            isMounted = false;
+            if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+                window.speechSynthesis.onvoiceschanged = null;
+            }
+        };
     }, []);
 
     const currentWord = testList[currentIndex];
 
     const handleSpeak = useCallback((text: string) => {
-        if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
+        if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+            const synth = window.speechSynthesis;
+            if (synth.getVoices().length === 0) synth.getVoices();
+
+            synth.cancel();
+            synth.resume();
+
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.rate = 0.85;
-            window.speechSynthesis.speak(utterance);
+            synth.speak(utterance);
         }
     }, []);
 
     useEffect(() => {
         if (isStarted && currentWord && !showResult && feedback.type === null) {
-            handleSpeak(currentWord.word);
-            inputRef.current?.focus();
+            // Small delay to ensure browser audio context is fully unlocked after interaction
+            const timer = setTimeout(() => {
+                handleSpeak(currentWord.word);
+                inputRef.current?.focus();
+            }, 100);
+            return () => clearTimeout(timer);
         }
     }, [isStarted, currentIndex, currentWord, showResult, feedback.type, handleSpeak]);
 
@@ -73,7 +90,17 @@ export default function MockTestPage() {
                         This mock competition will test 10 random words. Make sure your volume is up!
                     </p>
                     <button
-                        onClick={() => setIsStarted(true)}
+                        onClick={() => {
+                            // High-priority audio priming for browser security policies
+                            if ('speechSynthesis' in window) {
+                                window.speechSynthesis.cancel();
+                                window.speechSynthesis.resume();
+                                const prime = new SpeechSynthesisUtterance("Start");
+                                prime.volume = 0; // Silent prime
+                                window.speechSynthesis.speak(prime);
+                            }
+                            setIsStarted(true);
+                        }}
                         style={{ width: '100%', fontSize: '1.2rem', padding: '1.2rem' }}
                     >
                         Enter the Arena
@@ -203,12 +230,11 @@ export default function MockTestPage() {
                         value={userInput}
                         onChange={(e) => setUserInput(e.target.value)}
                         disabled={feedback.type !== null}
-                        placeholder="Type spelling..."
+                        placeholder="TYPE SPELLING..."
                         autoComplete="off"
                         autoFocus
                         style={{
                             textAlign: 'center',
-                            textTransform: 'uppercase',
                             letterSpacing: '0.3em',
                             fontSize: '2.5rem',
                             fontWeight: 'bold',
@@ -231,24 +257,30 @@ export default function MockTestPage() {
 
                 {!feedback.message && (
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '4rem' }}>
-                        <button
-                            onClick={() => setRequestedInfo(prev => ({ ...prev, definition: true }))}
-                            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'var(--foreground)', fontSize: '0.85rem' }}
-                        >
-                            Definition
-                        </button>
-                        <button
-                            onClick={() => setRequestedInfo(prev => ({ ...prev, origin: true }))}
-                            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'var(--foreground)', fontSize: '0.85rem' }}
-                        >
-                            Origin
-                        </button>
-                        <button
-                            onClick={() => setRequestedInfo(prev => ({ ...prev, sentence: true }))}
-                            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'var(--foreground)', fontSize: '0.85rem' }}
-                        >
-                            Sentence
-                        </button>
+                        {currentWord.definition && (
+                            <button
+                                onClick={() => setRequestedInfo(prev => ({ ...prev, definition: true }))}
+                                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'var(--foreground)', fontSize: '0.85rem' }}
+                            >
+                                Definition
+                            </button>
+                        )}
+                        {currentWord.origin && (
+                            <button
+                                onClick={() => setRequestedInfo(prev => ({ ...prev, origin: true }))}
+                                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'var(--foreground)', fontSize: '0.85rem' }}
+                            >
+                                Origin
+                            </button>
+                        )}
+                        {currentWord.sentence && (
+                            <button
+                                onClick={() => setRequestedInfo(prev => ({ ...prev, sentence: true }))}
+                                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'var(--foreground)', fontSize: '0.85rem' }}
+                            >
+                                Sentence
+                            </button>
+                        )}
                     </div>
                 )}
 
