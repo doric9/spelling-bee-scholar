@@ -25,7 +25,15 @@ export default function LearnPage() {
         let isMounted = true;
 
         async function initialize() {
-            let userProgress: Record<string, string> = {};
+            // 1. Immediate UI: Create a session from local data right away
+            const initialFiltered = words.filter(w => w.difficulty === 'OneBee');
+            const initialShuffled = initialFiltered.sort(() => 0.5 - Math.random()).slice(0, 20);
+
+            if (isMounted) {
+                setStudyList(initialShuffled);
+            }
+
+            // 2. Background Sync: Fetch user data (bookmarks and progress)
             if (user) {
                 try {
                     await ensureUserDoc(user.uid, user.email || '');
@@ -33,7 +41,7 @@ export default function LearnPage() {
                         getUserBookmarks(user.uid),
                         getUserProgressByTier(user.uid)
                     ]);
-                    userProgress = progress;
+
                     if (isMounted) {
                         setBookmarks(bmarks);
                         setMasteryMap(progress);
@@ -42,16 +50,6 @@ export default function LearnPage() {
                     console.error("Firebase sync error - proceeding offline:", error);
                     if (isMounted) setBookmarks(new Set());
                 }
-            }
-
-            // Perform initial session creation only on the client
-            const filtered = words.filter(w => w.difficulty === 'OneBee');
-            // If user is logged in, we can apply initial smart filter if we wanted, 
-            // but let's stick to defaults for first load unless we want to be aggressive.
-            const shuffled = filtered.sort(() => 0.5 - Math.random()).slice(0, 20);
-
-            if (isMounted) {
-                setStudyList(shuffled);
             }
         }
 
