@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { words, Word, WordDifficulty } from '@/data/words';
 import WordCard from '@/components/WordCard';
 import { useAuth } from '@/context/AuthContext';
-import { getUserBookmarks, toggleBookmark, ensureUserDoc, updateWordProgress } from '@/lib/userService';
+import { getUserBookmarks, toggleBookmark, ensureUserDoc, updateWordProgress, getUserProgressByTier } from '@/lib/userService';
 
 type SessionSize = 20 | 50 | 100 | 'All';
 
@@ -15,6 +15,8 @@ export default function LearnPage() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const { user } = useAuth();
     const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
+    const [masteryMap, setMasteryMap] = useState<Record<string, string>>({});
+    const [unmasteredOnly, setUnmasteredOnly] = useState(false);
 
     // Initialize study list with an empty array to prevent hydration mismatch
     const [studyList, setStudyList] = useState<Word[]>([]);
@@ -23,25 +25,33 @@ export default function LearnPage() {
         let isMounted = true;
 
         async function initialize() {
-            // Perform initial shuffle only on the client
-            const filtered = words.filter(w => w.difficulty === 'OneBee');
-            const shuffled = filtered.sort(() => 0.5 - Math.random()).slice(0, 20);
-
-            if (isMounted) {
-                setStudyList(shuffled);
-            }
-
+            let userProgress: Record<string, string> = {};
             if (user) {
                 try {
                     await ensureUserDoc(user.uid, user.email || '');
-                    const fetched = await getUserBookmarks(user.uid);
-                    if (isMounted) setBookmarks(fetched);
+                    const [bmarks, progress] = await Promise.all([
+                        getUserBookmarks(user.uid),
+                        getUserProgressByTier(user.uid)
+                    ]);
+                    userProgress = progress;
+                    if (isMounted) {
+                        setBookmarks(bmarks);
+                        setMasteryMap(progress);
+                    }
                 } catch (error) {
                     console.error("Firebase sync error - proceeding offline:", error);
                     if (isMounted) setBookmarks(new Set());
                 }
-            } else {
-                if (isMounted) setBookmarks(new Set());
+            }
+
+            // Perform initial session creation only on the client
+            const filtered = words.filter(w => w.difficulty === 'OneBee');
+            // If user is logged in, we can apply initial smart filter if we wanted, 
+            // but let's stick to defaults for first load unless we want to be aggressive.
+            const shuffled = filtered.sort(() => 0.5 - Math.random()).slice(0, 20);
+
+            if (isMounted) {
+                setStudyList(shuffled);
             }
         }
 
@@ -64,10 +74,25 @@ export default function LearnPage() {
         await toggleBookmark(user.uid, wordId, wordStr, isBookmarked);
     };
 
-    const startNewSession = (diff: WordDifficulty | 'All', size: SessionSize) => {
-        const filtered = diff === 'All'
+    const startNewSession = (diff: WordDifficulty | 'All', size: SessionSize, filterUnmastered: boolean = unmasteredOnly) => {
+        let filtered = diff === 'All'
             ? [...words]
             : words.filter(w => w.difficulty === diff);
+
+        if (filterUnmastered) {
+            filtered = filtered.filter(w => masteryMap[w.id] !== 'mastered');
+        }
+
+        if (filtered.length === 0) {
+            if (filterUnmastered) {
+                alert(`Amazing! You've mastered all words in the ${diff === 'All' ? 'entire roster' : diff + ' tier'}!`);
+                setUnmasteredOnly(false);
+                startNewSession(diff, size, false);
+            } else {
+                alert("No words found for this selection.");
+            }
+            return;
+        }
 
         // Shuffle and take the selected session size
         const shuffled = filtered.sort(() => 0.5 - Math.random());
@@ -86,14 +111,22 @@ export default function LearnPage() {
         startNewSession(difficulty, size);
     };
 
+    const handleToggleUnmastered = () => {
+        const newVal = !unmasteredOnly;
+        setUnmasteredOnly(newVal);
+        startNewSession(difficulty, sessionSize, newVal);
+    };
+
     const handleNextWord = async () => {
         // Mark as mastered when the user moves to the next word
         if (user) {
+            const wordId = studyList[currentIndex].id;
             try {
-                // We don't necessarily need to await this if we want immediate UI response, 
-                // but we should catch errors to avoid blocking.
-                updateWordProgress(user.uid, studyList[currentIndex].id, 'mastered')
+                updateWordProgress(user.uid, wordId, 'mastered')
                     .catch(err => console.error("Failed to update progress:", err));
+
+                // Update local state to reflect mastery immediately
+                setMasteryMap(prev => ({ ...prev, [wordId]: 'mastered' }));
             } catch (error) {
                 console.error("Progress update error:", error);
             }
@@ -103,7 +136,7 @@ export default function LearnPage() {
             setCurrentIndex(currentIndex + 1);
         } else {
             // End of session
-            alert(`Great job! You've mastered ${studyList.length} ${difficulty === 'All' ? '' : difficulty + ' '}words!`);
+            alert(`Great job! You've completed your session of ${studyList.length} words!`);
             // Reshuffle for next session
             startNewSession(difficulty, sessionSize);
         }
@@ -157,28 +190,58 @@ export default function LearnPage() {
                 </div>
             </nav>
 
-            {/* Session Size Selector */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-                <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 500 }}>Session Size:</span>
-                <div style={{ display: 'flex', gap: '0.5rem', background: 'var(--secondary)', padding: '0.3rem', borderRadius: '10px', border: '1px solid var(--border)' }}>
-                    {([20, 50, 100, 'All'] as SessionSize[]).map((size) => (
-                        <button
-                            key={size}
-                            onClick={() => handleSizeChange(size)}
-                            style={{
-                                padding: '0.4rem 0.9rem',
-                                fontSize: '0.8rem',
-                                background: sessionSize === size ? 'var(--primary)' : 'transparent',
-                                color: sessionSize === size ? '#fff' : 'var(--text-muted)',
-                                boxShadow: 'none',
-                                borderRadius: '6px',
-                                fontWeight: 600
-                            }}
-                        >
-                            {size === 'All' ? 'All' : size}
-                        </button>
-                    ))}
+            {/* Session Settings */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 500 }}>Session Size:</span>
+                    <div style={{ display: 'flex', gap: '0.5rem', background: 'var(--secondary)', padding: '0.3rem', borderRadius: '10px', border: '1px solid var(--border)' }}>
+                        {([20, 50, 100, 'All'] as SessionSize[]).map((size) => (
+                            <button
+                                key={size}
+                                onClick={() => handleSizeChange(size)}
+                                style={{
+                                    padding: '0.4rem 0.9rem',
+                                    fontSize: '0.8rem',
+                                    background: sessionSize === size ? 'var(--primary)' : 'transparent',
+                                    color: sessionSize === size ? '#fff' : 'var(--text-muted)',
+                                    boxShadow: 'none',
+                                    borderRadius: '6px',
+                                    fontWeight: 600
+                                }}
+                            >
+                                {size === 'All' ? 'All' : size}
+                            </button>
+                        ))}
+                    </div>
                 </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <button
+                        onClick={handleToggleUnmastered}
+                        style={{
+                            padding: '0.5rem 1rem',
+                            fontSize: '0.85rem',
+                            background: unmasteredOnly ? 'var(--accent-gradient)' : 'var(--secondary)',
+                            color: unmasteredOnly ? '#fff' : 'var(--text-muted)',
+                            borderRadius: '10px',
+                            border: '1px solid var(--border)',
+                            fontWeight: 600,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem'
+                        }}
+                    >
+                        <div style={{
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            background: unmasteredOnly ? '#fff' : 'var(--border)',
+                            boxShadow: unmasteredOnly ? '0 0 8px #fff' : 'none'
+                        }} />
+                        New Words Only
+                    </button>
+                </div>
+
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                     ({studyList.length} words in session)
                 </span>
@@ -202,6 +265,7 @@ export default function LearnPage() {
                         partOfSpeech={currentWord.partOfSpeech}
                         difficulty={currentWord.difficulty}
                         isBookmarked={bookmarks.has(currentWord.id)}
+                        isMastered={masteryMap[currentWord.id] === 'mastered'}
                         onToggleBookmark={() => handleToggleBookmark(currentWord.id, currentWord.word)}
                         onNext={handleNextWord}
                     />

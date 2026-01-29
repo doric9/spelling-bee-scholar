@@ -4,19 +4,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
-import { getUserStats } from '@/lib/userService';
+import { getUserProgressByTier } from '@/lib/userService';
 import { words } from '@/data/words';
 
 export default function Home() {
   const { user, login, logout } = useAuth();
-  const [stats, setStats] = useState({ masteredCount: 0 });
+  const [stats, setStats] = useState<Record<string, string>>({});
   const totalCount = words.length;
 
   useEffect(() => {
     if (user) {
-      getUserStats(user.uid).then(setStats);
+      getUserProgressByTier(user.uid).then(setStats);
     }
   }, [user]);
+
+  const getTierStats = (tier: string) => {
+    const tierWords = words.filter(w => w.difficulty === tier);
+    const masteredInTier = tierWords.filter(w => stats[w.id] === 'mastered').length;
+    return {
+      mastered: masteredInTier,
+      total: tierWords.length,
+      percentage: (masteredInTier / tierWords.length) * 100
+    };
+  };
+
+  const oneBee = getTierStats('OneBee');
+  const twoBee = getTierStats('TwoBee');
+  const threeBee = getTierStats('ThreeBee');
+  const totalMastered = Object.values(stats).filter(s => s === 'mastered').length;
 
   return (
     <main>
@@ -90,20 +105,37 @@ export default function Home() {
         marginTop: '2rem'
       }}>
         {user && (
-          <div className="card" style={{ display: 'flex', flexDirection: 'column', background: 'var(--glass-bg)', border: '2px solid var(--primary-glow)', position: 'relative', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '100px', height: '100px', background: 'var(--primary-glow)', borderRadius: '50%', opacity: 0.1 }} />
-            <h2 style={{ fontSize: '1.8rem', color: 'var(--primary)', marginBottom: '1rem' }}>My Progress</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Words Mastered</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{stats.masteredCount} / {totalCount.toLocaleString()}</div>
-              </div>
-              <div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Roster Coverage</div>
-                <div style={{ height: '8px', background: 'var(--border)', borderRadius: '4px', marginTop: '0.5rem', overflow: 'hidden' }}>
-                  <div style={{ width: `${(stats.masteredCount / totalCount) * 100}%`, height: '100%', background: 'var(--primary)' }} />
+          <div className="card" style={{ display: 'flex', flexDirection: 'column', background: 'var(--glass-bg)', border: '1px solid var(--border)', position: 'relative', overflow: 'hidden', gridColumn: '1 / -1' }}>
+            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '150px', height: '150px', background: 'var(--primary-glow)', borderRadius: '50%', opacity: 0.05 }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+              <h2 style={{ fontSize: '1.5rem', color: 'var(--primary)', margin: 0 }}>Progress Roadmap</h2>
+              <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{totalMastered.toLocaleString()} / {totalCount.toLocaleString()} <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 'normal' }}>words mastered</span></div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2.5rem' }}>
+              {[
+                { label: 'One Bee (Easy)', stats: oneBee, color: '#16a34a' },
+                { label: 'Two Bee (Medium)', stats: twoBee, color: '#ca8a04' },
+                { label: 'Three Bee (Hard)', stats: threeBee, color: '#dc2626' }
+              ].map((tier, idx) => (
+                <div key={idx}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', fontSize: '0.9rem' }}>
+                    <span style={{ fontWeight: 600 }}>{tier.label}</span>
+                    <span style={{ color: 'var(--text-muted)' }}>{tier.stats.mastered} / {tier.stats.total}</span>
+                  </div>
+                  <div style={{ height: '8px', background: 'var(--secondary)', borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+                    <div style={{
+                      width: `${tier.stats.percentage}%`,
+                      height: '100%',
+                      background: tier.color,
+                      transition: 'width 1s ease-out'
+                    }} />
+                  </div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.4rem', textAlign: 'right' }}>
+                    {Math.round(tier.stats.percentage)}% Complete
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         )}

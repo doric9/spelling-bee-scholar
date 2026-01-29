@@ -8,6 +8,7 @@ interface WordCardProps {
   partOfSpeech: string;
   difficulty: string;
   isBookmarked?: boolean;
+  isMastered?: boolean;
   onToggleBookmark?: () => void;
   onNext: () => void;
 }
@@ -19,6 +20,7 @@ export default function WordCard({
   partOfSpeech,
   difficulty,
   isBookmarked = false,
+  isMastered = false,
   onToggleBookmark,
   onNext
 }: WordCardProps) {
@@ -115,6 +117,23 @@ export default function WordCard({
           textAlign: 'center'
         }}>
           <span style={{ fontSize: '0.9rem', color: 'var(--primary)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{difficulty}</span>
+
+          {isMastered && (
+            <div style={{
+              position: 'absolute',
+              top: '1.5rem',
+              left: '1.5rem',
+              background: 'rgba(22, 163, 74, 0.15)',
+              color: '#16a34a',
+              padding: '0.3rem 0.6rem',
+              borderRadius: '6px',
+              fontSize: '0.7rem',
+              fontWeight: 'bold',
+              border: '1px solid rgba(22, 163, 74, 0.2)'
+            }}>
+              MASTERED
+            </div>
+          )}
 
           {onToggleBookmark && (
             <button
