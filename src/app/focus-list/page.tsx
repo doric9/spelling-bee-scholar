@@ -5,11 +5,12 @@ import Link from 'next/link';
 import { words, Word } from '@/data/words';
 import WordCard from '@/components/WordCard';
 import { useAuth } from '@/context/AuthContext';
-import { getUserBookmarks, toggleBookmark } from '@/lib/userService';
+import { getUserBookmarks, toggleBookmark, getUserProgressByTier } from '@/lib/userService';
 
 export default function FocusListPage() {
     const { user, loading } = useAuth();
     const [bookmarkedWords, setBookmarkedWords] = useState<Word[]>([]);
+    const [masteryMap, setMasteryMap] = useState<Record<string, string>>({});
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isRefreshing, setIsRefreshing] = useState(true);
 
@@ -17,13 +18,44 @@ export default function FocusListPage() {
         let isMounted = true;
 
         async function load() {
+            // 1. Immediate UI: Try to load from localStorage cache first
+            if (typeof window !== 'undefined') {
+                const cachedIds = localStorage.getItem('sb_focus_list');
+                if (cachedIds) {
+                    try {
+                        const ids = new Set(JSON.parse(cachedIds));
+                        const cachedFiltered = words.filter(w => ids.has(w.id));
+                        if (isMounted && cachedFiltered.length > 0) {
+                            setBookmarkedWords(cachedFiltered);
+                            setIsRefreshing(false);
+                        }
+                    } catch (e) {
+                        console.error("Cache parse error:", e);
+                    }
+                }
+            }
+
+            // 2. Background Sync: Fetch fresh data from Firebase
             if (!loading && user) {
-                // If we want to show a refresh state, we do it in a way that doesn't trigger cascading render error
-                const bookmarkIds = await getUserBookmarks(user.uid);
-                const filtered = words.filter(w => bookmarkIds.has(w.id));
-                if (isMounted) {
-                    setBookmarkedWords(filtered);
-                    setIsRefreshing(false);
+                try {
+                    const [bookmarkIds, progress] = await Promise.all([
+                        getUserBookmarks(user.uid),
+                        getUserProgressByTier(user.uid)
+                    ]);
+
+                    const filtered = words.filter(w => bookmarkIds.has(w.id));
+
+                    if (isMounted) {
+                        setBookmarkedWords(filtered);
+                        setMasteryMap(progress);
+                        setIsRefreshing(false);
+
+                        // Update cache
+                        localStorage.setItem('sb_focus_list', JSON.stringify(Array.from(bookmarkIds)));
+                    }
+                } catch (error) {
+                    console.error("Focus sync error:", error);
+                    if (isMounted) setIsRefreshing(false);
                 }
             } else if (!loading && !user) {
                 if (isMounted) setIsRefreshing(false);
@@ -55,11 +87,11 @@ export default function FocusListPage() {
         }
     };
 
-    if (loading || isRefreshing) {
+    if (loading) {
         return (
             <main>
                 <div style={{ padding: '4rem', textAlign: 'center', background: 'var(--glass-bg)', borderRadius: '20px' }}>
-                    <h2 style={{ color: 'var(--primary)' }}>Loading your Focus List...</h2>
+                    <h2 style={{ color: 'var(--primary)' }}>Authenticating...</h2>
                 </div>
             </main>
         );
@@ -78,14 +110,30 @@ export default function FocusListPage() {
 
     if (bookmarkedWords.length === 0) {
         return (
-            <main style={{ textAlign: 'center', padding: '4rem' }}>
-                <h2 style={{ color: 'var(--primary)', marginBottom: '1.5rem' }}>Your Focus List is empty</h2>
-                <p style={{ color: 'var(--text-muted)', maxWidth: '500px', margin: '0 auto 2rem' }}>
-                    Star words you want to study more intensely in the Learning or Mock Test sections to add them here.
-                </p>
-                <Link href="/learn">
-                    <button>Go to Learn Page</button>
-                </Link>
+            <main style={{ maxWidth: '1000px', padding: '2rem' }}>
+                <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
+                    <Link href="/" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        ← Back Dashboard
+                    </Link>
+                </nav>
+                <div style={{ textAlign: 'center', padding: '4rem', background: 'var(--glass-bg)', borderRadius: '24px' }}>
+                    {isRefreshing ? (
+                        <>
+                            <h2 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>Syncing your list...</h2>
+                            <p style={{ color: 'var(--text-muted)' }}>Retrieving your bookmarked words from the Cloud.</p>
+                        </>
+                    ) : (
+                        <>
+                            <h2 style={{ color: 'var(--primary)', marginBottom: '1.5rem' }}>Your Focus List is empty</h2>
+                            <p style={{ color: 'var(--text-muted)', maxWidth: '500px', margin: '0 auto 2rem' }}>
+                                Star words you want to study more intensely in the Learning or Mock Test sections to add them here.
+                            </p>
+                            <Link href="/learn">
+                                <button>Go to Learn Page</button>
+                            </Link>
+                        </>
+                    )}
+                </div>
             </main>
         );
     }
@@ -110,7 +158,10 @@ export default function FocusListPage() {
                     ← Back Dashboard
                 </Link>
                 <div style={{ textAlign: 'right' }}>
-                    <h1 style={{ fontSize: '1.5rem', color: 'var(--primary)' }}>Focus List</h1>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '0.5rem' }}>
+                        {isRefreshing && <span className="vibrate" style={{ fontSize: '0.7rem', color: 'var(--primary)', fontWeight: 'bold' }}>SYNCING</span>}
+                        <h1 style={{ fontSize: '1.5rem', color: 'var(--primary)', margin: 0 }}>Focus List</h1>
+                    </div>
                     <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>{bookmarkedWords.length} words bookmarked</span>
                 </div>
             </nav>
@@ -131,6 +182,7 @@ export default function FocusListPage() {
                 partOfSpeech={currentWord.partOfSpeech}
                 difficulty={currentWord.difficulty}
                 isBookmarked={true}
+                isMastered={masteryMap[currentWord.id] === 'mastered'}
                 onToggleBookmark={() => handleToggleBookmark(currentWord.id, currentWord.word)}
                 onNext={handleNextWord}
             />

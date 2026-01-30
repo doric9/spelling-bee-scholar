@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { getUserProgressByTier } from '@/lib/userService';
 import { words } from '@/data/words';
+import { calculateTieredStats } from '@/lib/progress';
 
 export default function Home() {
   const { user, login, logout } = useAuth();
@@ -18,19 +19,7 @@ export default function Home() {
     }
   }, [user]);
 
-  const getTierStats = (tier: string) => {
-    const tierWords = words.filter(w => w.difficulty === tier);
-    const masteredInTier = tierWords.filter(w => stats[w.id] === 'mastered').length;
-    return {
-      mastered: masteredInTier,
-      total: tierWords.length,
-      percentage: (masteredInTier / tierWords.length) * 100
-    };
-  };
-
-  const oneBee = getTierStats('OneBee');
-  const twoBee = getTierStats('TwoBee');
-  const threeBee = getTierStats('ThreeBee');
+  const tieredStats = calculateTieredStats(words, stats);
   const totalMastered = Object.values(stats).filter(s => s === 'mastered').length;
 
   return (
@@ -113,26 +102,22 @@ export default function Home() {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2.5rem' }}>
-              {[
-                { label: 'One Bee (Easy)', stats: oneBee, color: '#16a34a' },
-                { label: 'Two Bee (Medium)', stats: twoBee, color: '#ca8a04' },
-                { label: 'Three Bee (Hard)', stats: threeBee, color: '#dc2626' }
-              ].map((tier, idx) => (
+              {Object.values(tieredStats).map((tier, idx) => (
                 <div key={idx}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', fontSize: '0.9rem' }}>
                     <span style={{ fontWeight: 600 }}>{tier.label}</span>
-                    <span style={{ color: 'var(--text-muted)' }}>{tier.stats.mastered} / {tier.stats.total}</span>
+                    <span style={{ color: 'var(--text-muted)' }}>{tier.mastered} / {tier.total}</span>
                   </div>
                   <div style={{ height: '8px', background: 'var(--secondary)', borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--border)' }}>
                     <div style={{
-                      width: `${tier.stats.percentage}%`,
+                      width: `${tier.percentage}%`,
                       height: '100%',
                       background: tier.color,
                       transition: 'width 1s ease-out'
                     }} />
                   </div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.4rem', textAlign: 'right' }}>
-                    {Math.round(tier.stats.percentage)}% Complete
+                    {Math.round(tier.percentage)}% Complete
                   </div>
                 </div>
               ))}

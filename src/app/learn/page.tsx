@@ -25,15 +25,13 @@ export default function LearnPage() {
         let isMounted = true;
 
         async function initialize() {
-            // 1. Immediate UI: Create a session from local data right away
+            // 1. Immediate UI: Initial session
             const initialFiltered = words.filter(w => w.difficulty === 'OneBee');
             const initialShuffled = initialFiltered.sort(() => 0.5 - Math.random()).slice(0, 20);
 
-            if (isMounted) {
-                setStudyList(initialShuffled);
-            }
+            if (isMounted) setStudyList(initialShuffled);
 
-            // 2. Background Sync: Fetch user data (bookmarks and progress)
+            // 2. Background Sync: Fetch user data
             if (user) {
                 try {
                     await ensureUserDoc(user.uid, user.email || '');
@@ -47,8 +45,7 @@ export default function LearnPage() {
                         setMasteryMap(progress);
                     }
                 } catch (error) {
-                    console.error("Firebase sync error - proceeding offline:", error);
-                    if (isMounted) setBookmarks(new Set());
+                    console.error("Learn sync error:", error);
                 }
             }
         }
