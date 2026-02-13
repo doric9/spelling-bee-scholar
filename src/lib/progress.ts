@@ -2,10 +2,14 @@ import { Word } from "@/data/words";
 
 export interface TierStats {
     mastered: number;
+    learning: number;
+    untouched: number;
     total: number;
-    percentage: number;
+    masteredPercentage: number;
+    learningPercentage: number;
     label: string;
     color: string;
+    secondaryColor: string;
 }
 
 /**
@@ -18,13 +22,19 @@ export const calculateTieredStats = (words: Word[], progressMap: Record<string, 
     tiers.forEach(tier => {
         const tierWords = words.filter(w => w.difficulty === tier);
         const masteredInTier = tierWords.filter(w => progressMap[w.id] === 'mastered').length;
+        const learningInTier = tierWords.filter(w => progressMap[w.id] && progressMap[w.id] !== 'mastered').length;
+        const untouchedInTier = tierWords.length - masteredInTier - learningInTier;
 
         results[tier] = {
             mastered: masteredInTier,
+            learning: learningInTier,
+            untouched: untouchedInTier,
             total: tierWords.length,
-            percentage: tierWords.length > 0 ? (masteredInTier / tierWords.length) * 100 : 0,
+            masteredPercentage: tierWords.length > 0 ? (masteredInTier / tierWords.length) * 100 : 0,
+            learningPercentage: tierWords.length > 0 ? (learningInTier / tierWords.length) * 100 : 0,
             label: formatTierLabel(tier),
-            color: getTierColor(tier)
+            color: getTierColor(tier, 'primary'),
+            secondaryColor: getTierColor(tier, 'secondary')
         };
     });
 
@@ -46,11 +56,12 @@ export const formatTierLabel = (tier: string): string => {
 /**
  * Returns the theme color for a specific tier.
  */
-export const getTierColor = (tier: string): string => {
-    switch (tier) {
-        case 'OneBee': return '#16a34a'; // Green
-        case 'TwoBee': return '#ca8a04'; // Gold
-        case 'ThreeBee': return '#dc2626'; // Red
-        default: return 'var(--primary)';
-    }
+export const getTierColor = (tier: string, type: 'primary' | 'secondary' = 'primary'): string => {
+    const colors: Record<string, { primary: string, secondary: string }> = {
+        'OneBee': { primary: '#16a34a', secondary: '#86efac' },   // Green / Light Green
+        'TwoBee': { primary: '#ca8a04', secondary: '#fde047' },   // Gold / Yellow
+        'ThreeBee': { primary: '#dc2626', secondary: '#fca5a5' }  // Red / Rose
+    };
+
+    return colors[tier]?.[type] || (type === 'primary' ? 'var(--primary)' : 'var(--secondary)');
 };
