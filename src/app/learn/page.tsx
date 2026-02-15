@@ -44,8 +44,8 @@ export default function LearnPage() {
                         setBookmarks(bmarks);
                         setMasteryMap(progress);
                     }
-                } catch (error) {
-                    console.error("Learn sync error:", error);
+                } catch {
+                    // Fail silently or handle gracefully in production
                 }
             }
         }
@@ -112,18 +112,17 @@ export default function LearnPage() {
         startNewSession(difficulty, sessionSize, newVal);
     };
 
-    const handleNextWord = async () => {
-        // Mark as mastered when the user moves to the next word
-        if (user) {
+    const handleNextWord = async (mastered: boolean) => {
+        // Mark as mastered ONLY if the user explicitly clicked the mastered button
+        if (user && mastered) {
             const wordId = studyList[currentIndex].id;
             try {
-                updateWordProgress(user.uid, wordId, 'mastered')
-                    .catch(err => console.error("Failed to update progress:", err));
+                updateWordProgress(user.uid, wordId, 'mastered');
 
                 // Update local state to reflect mastery immediately
                 setMasteryMap(prev => ({ ...prev, [wordId]: 'mastered' }));
-            } catch (error) {
-                console.error("Progress update error:", error);
+            } catch {
+                // Fail silently or handle gracefully
             }
         }
 

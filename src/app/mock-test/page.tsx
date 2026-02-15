@@ -2,9 +2,12 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { words, Word } from '@/data/words';
+import { words, Word, WordDifficulty } from '@/data/words';
+import { useAuth } from '@/context/AuthContext';
+import { updateWordProgress } from '@/lib/userService';
 
 export default function MockTestPage() {
+    const { user } = useAuth();
     const [testList, setTestList] = useState<Word[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [userInput, setUserInput] = useState('');
@@ -12,37 +15,56 @@ export default function MockTestPage() {
     const [score, setScore] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [isStarted, setIsStarted] = useState(false);
+    const [difficulty, setDifficulty] = useState<WordDifficulty | 'All'>('OneBee');
     const [requestedInfo, setRequestedInfo] = useState<{ definition: boolean, origin: boolean, sentence: boolean }>({ definition: false, origin: false, sentence: false });
     const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        let isMounted = true;
-
         const loadVoices = () => {
             if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
                 window.speechSynthesis.getVoices();
             }
         };
 
-        async function initialize() {
-            // Initialize words only on client to avoid hydration mismatch
-            const shuffled = [...words].sort(() => 0.5 - Math.random()).slice(0, 10);
-            if (isMounted) setTestList(shuffled);
-
-            loadVoices();
-            if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-                window.speechSynthesis.onvoiceschanged = loadVoices;
-            }
+        loadVoices();
+        if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
         }
 
-        initialize();
         return () => {
-            isMounted = false;
             if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
                 window.speechSynthesis.onvoiceschanged = null;
             }
         };
     }, []);
+
+    const startTest = () => {
+        const filtered = difficulty === 'All'
+            ? [...words]
+            : words.filter(w => w.difficulty === difficulty);
+
+        if (filtered.length === 0) {
+            alert("No words found for this selection.");
+            return;
+        }
+
+        const shuffled = filtered.sort(() => 0.5 - Math.random()).slice(0, 10);
+        setTestList(shuffled);
+        setCurrentIndex(0);
+        setScore(0);
+        setFeedback({ type: null, message: '' });
+        setShowResult(false);
+
+        // High-priority audio priming for browser security policies
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            window.speechSynthesis.resume();
+            const prime = new SpeechSynthesisUtterance("Start");
+            prime.volume = 0; // Silent prime
+            window.speechSynthesis.speak(prime);
+        }
+        setIsStarted(true);
+    };
 
     const currentWord = testList[currentIndex];
 
@@ -89,18 +111,40 @@ export default function MockTestPage() {
                     <p style={{ color: 'var(--text-muted)', marginBottom: '3rem' }}>
                         This mock competition will test 10 random words. Make sure your volume is up!
                     </p>
+                    <div style={{
+                        display: 'flex',
+                        gap: '0.75rem',
+                        background: 'var(--secondary)',
+                        padding: '0.5rem',
+                        borderRadius: '16px',
+                        border: '1px solid var(--border)',
+                        marginBottom: '2rem',
+                        justifyContent: 'center'
+                    }}>
+                        {(['OneBee', 'TwoBee', 'ThreeBee', 'All'] as const).map((lvl) => (
+                            <button
+                                key={lvl}
+                                onClick={() => setDifficulty(lvl)}
+                                style={{
+                                    padding: '0.6rem 1.2rem',
+                                    fontSize: '0.9rem',
+                                    background: difficulty === lvl ? 'var(--accent-gradient)' : 'transparent',
+                                    color: difficulty === lvl ? '#fff' : 'var(--text-muted)',
+                                    boxShadow: difficulty === lvl ? '0 4px 10px 0 var(--primary-glow)' : 'none',
+                                    borderRadius: '12px',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.2s ease',
+                                    fontWeight: 600
+                                }}
+                            >
+                                {lvl === 'All' ? 'Mixed' : lvl.replace('Bee', ' Bee')}
+                            </button>
+                        ))}
+                    </div>
+
                     <button
-                        onClick={() => {
-                            // High-priority audio priming for browser security policies
-                            if ('speechSynthesis' in window) {
-                                window.speechSynthesis.cancel();
-                                window.speechSynthesis.resume();
-                                const prime = new SpeechSynthesisUtterance("Start");
-                                prime.volume = 0; // Silent prime
-                                window.speechSynthesis.speak(prime);
-                            }
-                            setIsStarted(true);
-                        }}
+                        onClick={startTest}
                         style={{ width: '100%', fontSize: '1.2rem', padding: '1.2rem' }}
                     >
                         Enter the Arena
@@ -124,6 +168,10 @@ export default function MockTestPage() {
         if (isCorrect) {
             setScore(s => s + 1);
             setFeedback({ type: 'correct', message: 'Masterful!' });
+
+            if (user) {
+                updateWordProgress(user.uid, currentWord.id, 'mastered');
+            }
         } else {
             setFeedback({ type: 'incorrect', message: `Incorrect. Correct spelling: ${currentWord.word.toUpperCase()}` });
         }
@@ -241,6 +289,29 @@ export default function MockTestPage() {
                             borderBottomColor: feedback.type === 'correct' ? 'var(--success)' : feedback.type === 'incorrect' ? 'var(--error)' : 'var(--border)'
                         }}
                     />
+
+                    <div style={{ marginTop: '3rem' }}>
+                        <button
+                            type="submit"
+                            disabled={feedback.type !== null || !userInput.trim()}
+                            style={{
+                                padding: '1rem 3rem',
+                                fontSize: '1.25rem',
+                                fontWeight: 'bold',
+                                background: feedback.type !== null || !userInput.trim() ? 'var(--secondary)' : 'var(--accent-gradient)',
+                                color: feedback.type !== null || !userInput.trim() ? 'var(--text-muted)' : '#fff',
+                                borderRadius: '15px',
+                                border: 'none',
+                                cursor: feedback.type !== null || !userInput.trim() ? 'not-allowed' : 'pointer',
+                                transition: 'all 0.3s ease',
+                                boxShadow: feedback.type !== null || !userInput.trim() ? 'none' : '0 10px 25px -5px var(--primary-glow)',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.1em'
+                            }}
+                        >
+                            Submit Answer
+                        </button>
+                    </div>
                 </form>
 
                 {feedback.message && (

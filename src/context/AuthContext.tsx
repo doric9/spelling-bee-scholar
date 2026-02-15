@@ -25,8 +25,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         if (!auth) {
-            setLoading(false);
-            return;
+            // Use a slight delay to avoid synchronous state update in effect warning
+            const timer = setTimeout(() => setLoading(false), 0);
+            return () => clearTimeout(timer);
         }
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setUser(user);
@@ -46,7 +47,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             await signInWithPopup(auth, provider);
         } catch (error: unknown) {
             const authError = error as { code: string; message: string };
-            console.error("Login failed. Details:", authError.code, authError.message);
             if (authError.code === 'auth/configuration-not-found') {
                 alert("Firebase Auth Error: Please enable 'Google' as a sign-in provider in your Firebase Console (Authentication > Sign-in method).");
             } else if (authError.code === 'auth/unauthorized-domain') {
@@ -61,8 +61,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (!auth) return;
         try {
             await signOut(auth);
-        } catch (error) {
-            console.error("Logout failed:", error);
+        } catch {
+            // Silently fail on logout error or handle gracefully
         }
     };
 

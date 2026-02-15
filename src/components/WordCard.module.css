@@ -171,3 +171,55 @@
     height: 56px;
     font-size: 1.1rem;
 }
+
+.imageSearchBtn {
+    margin-top: 2rem;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #94a3b8;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.imageSearchBtn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.flippedActions {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.practiceBtn {
+    background: var(--secondary) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--foreground) !important;
+}
+
+.masterBtn {
+    background: var(--accent-gradient) !important;
+    border: none !important;
+    color: #fff !important;
+    box-shadow: 0 4px 15px 0 var(--primary-glow) !important;
+}
+
+.practiceBtn:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--primary) !important;
+}
+
+.masterBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 var(--primary-glow) !important;
+}

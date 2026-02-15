@@ -10,7 +10,7 @@ interface WordCardProps {
   isBookmarked?: boolean;
   isMastered?: boolean;
   onToggleBookmark?: () => void;
-  onNext: () => void;
+  onNext: (mastered: boolean) => void;
 }
 
 import styles from './WordCard.module.css';
@@ -122,16 +122,43 @@ export default function WordCard({
             <span className={styles.metaItem}>Origin: {origin}</span>
             <span className={styles.metaItem}>Type: {partOfSpeech}</span>
           </div>
+
+          <button
+            className={styles.imageSearchBtn}
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(word)}`, '_blank');
+            }}
+          >
+            🖼️ Search Visual Aid
+          </button>
         </div>
       </div>
 
       <div className={styles.nextContainer}>
-        <button
-          onClick={(e) => { e.stopPropagation(); setIsFlipped(false); onNext(); }}
-          className={styles.nextBtn}
-        >
-          Next Word
-        </button>
+        {isFlipped ? (
+          <div className={styles.flippedActions}>
+            <button
+              onClick={(e) => { e.stopPropagation(); setIsFlipped(false); onNext(false); }}
+              className={`${styles.nextBtn} ${styles.practiceBtn}`}
+            >
+              Keep Practicing
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); setIsFlipped(false); onNext(true); }}
+              className={`${styles.nextBtn} ${styles.masterBtn}`}
+            >
+              Mark as Mastered
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={(e) => { e.stopPropagation(); onNext(false); }}
+            className={styles.nextBtn}
+          >
+            Next Word
+          </button>
+        )}
       </div>
     </div>
   );

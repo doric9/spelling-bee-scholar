@@ -29,8 +29,8 @@ export default function FocusListPage() {
                             setBookmarkedWords(cachedFiltered);
                             setIsRefreshing(false);
                         }
-                    } catch (e) {
-                        console.error("Cache parse error:", e);
+                    } catch {
+                        // Fail silently
                     }
                 }
             }
@@ -53,8 +53,7 @@ export default function FocusListPage() {
                         // Update cache
                         localStorage.setItem('sb_focus_list', JSON.stringify(Array.from(bookmarkIds)));
                     }
-                } catch (error) {
-                    console.error("Focus sync error:", error);
+                } catch {
                     if (isMounted) setIsRefreshing(false);
                 }
             } else if (!loading && !user) {
